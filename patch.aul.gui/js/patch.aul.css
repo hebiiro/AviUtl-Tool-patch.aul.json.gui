@@ -1,0 +1,98 @@
+﻿* {
+	margin: 0;
+	padding: 0;
+}
+
+body, th, td, textarea {
+	font-family: "Lucida Grande", "Hiragino Maru Gothic ProN", Meiryo, "MS UI Gothic", "segoe UI", Arial, sans-serif;
+	font-size: 11pt;
+}
+
+.table {
+	border-collapse: collapse;
+	white-space: nowrap;
+}
+
+h1 {
+	padding: 0 0.25em;
+	border-bottom: 0.1em solid black;
+}
+
+h2 {
+	padding: 0 0.5em;
+	border-bottom: 0.1em solid black;
+}
+
+.node {
+	margin: 0.25em 0 0.25em 2em;
+}
+
+label {
+	cursor: pointer;
+	padding-right: 0.5em;
+}
+
+input {
+	padding: 0.25em;
+}
+
+.sp-preview {
+	width: 4em;
+}
+
+.tooltip {
+	position: relative;
+}
+
+.tooltip-text {
+	opacity: 0;
+	visibility: hidden;
+	position: absolute;
+	white-space: nowrap;
+	color: #fff;
+	background-color: #333;
+	padding: 0.5em;
+	border-radius: 0.25em;
+	transition: 0.2s ease-in;
+	z-index: 1;
+	pointer-events: none;
+}
+
+.tooltip:hover .tooltip-text {
+	opacity: 1;
+	visibility: visible;
+}
+
+.int-value {
+	width: 6em;
+}
+
+.preview {
+	margin: 1em;
+	background-color: #000000;
+	border-collapse: collapse;
+	white-space: nowrap;
+}
+
+.preview th,
+.preview td
+{
+	text-align: left;
+	vertical-align: bottom;
+	background-color: #f0f0f0;
+}
+
+.preview .inactive-layer th,
+.preview .inactive-layer td
+{
+	background-color: #909090;
+}
+
+.preview div {
+	padding: 2px;
+}
+
+.preview .layer-title div {
+	margin: 1px;
+	border: solid 1px #c0c0c0;
+}
