@@ -56,24 +56,19 @@ function loadFile(showDialog)
 
 	if (showDialog)
 	{
-		// comdlg32.ocx が必要。
+		var shell = new ActiveXObject('WScript.Shell');
+		var cd = shell.currentDirectory;
 
-		var OFN_FILEMUSTEXIST            = 0x00001000;
+		var fso = new ActiveXObject("Scripting.FileSystemObject");
+		var path = window.location.pathname.replace('/', '');
+		path = fso.GetParentFolderName(path);
+		path = '"' + path + '\\file.dialog.exe" -Open ' + '"' + cd + '"';
 
-		var dialog = new ActiveXObject('MSComDlg.CommonDialog');
-		dialog.Flags = OFN_FILEMUSTEXIST;
-		dialog.MaxFileSize = 256;
-		dialog.Filter = 'JSON Files|*.json|All Files|*.*';
-//		dialog.InitDir = '.\\..';
-		dialog.FileName = 'patch.aul.json';
-		dialog.CancelError = true;
-		try {
-			dialog.ShowOpen();
-		} catch (e) {
+		var exec = shell.Exec(path);
+		fileName = exec.StdOut.ReadLine();
+
+		if (!fileName)
 			return;
-		}
-
-		fileName = dialog.FileName;
 	}
 
 	try {
@@ -167,14 +162,13 @@ function loadFile(showDialog)
 		}
 	}
 
-	if (json.switch)
-	{
-		// switch
-
+	if (json.switch) {
 		setBoolValue('#json #switch #switch_access_key', json.switch['access_key']);
+		setBoolValue('#json #switch #switch_exo_aviutl_filter', json.switch['exo_aviutl_filter']);
 		setBoolValue('#json #switch #switch_exo_track_minusval', json.switch['exo_track_minusval']);
 		setBoolValue('#json #switch #switch_exo_sceneidx', json.switch['exo_sceneidx']);
 		setBoolValue('#json #switch #switch_exo_trackparam', json.switch['exo_trackparam']);
+		setBoolValue('#json #switch #switch_exo_specialcolorconv', json.switch['exo_specialcolorconv']);
 		setBoolValue('#json #switch #switch_text_op_size', json.switch['text_op_size']);
 		setBoolValue('#json #switch #switch_ignore_media_param_reset', json.switch['ignore_media_param_reset']);
 		setBoolValue('#json #switch #switch_theme_cc', json.switch['theme_cc']);
@@ -183,7 +177,10 @@ function loadFile(showDialog)
 		setBoolValue('#json #switch #switch_console_input', json.switch['console.input']);
 		setBoolValue('#json #switch #switch_console_debug_string', json.switch['console.debug_string']);
 		setBoolValue('#json #switch #switch_console_debug_string_time', json.switch['console.debug_string.time']);
-
+		setBoolValue('#json #switch #switch_lua', json.switch['lua']);
+		setBoolValue('#json #switch #switch_lua_rand', json.switch['lua.rand']);
+		setBoolValue('#json #switch #switch_lua_randex', json.switch['lua.randex']);
+		setBoolValue('#json #switch #switch_lua_getvalue', json.switch['lua.getvalue']);
 		setBoolValue('#json #switch #switch_fast', json.switch['fast']);
 		setBoolValue('#json #switch #switch_fast_cl', json.switch['fast.cl']);
 		setBoolValue('#json #switch #switch_fast_radiationalblur', json.switch['fast.radiationalblur']);
@@ -195,27 +192,21 @@ function saveFile()
 {
 	var fileName = 'patch.aul.json';
 
-	if (true)	// ファイル保存ダイアログを使用する場合は true にする。
+	if (true) // ファイル保存ダイアログを使用する場合は true にする。
 	{
-		// comdlg32.ocx が必要。
+		var shell = new ActiveXObject('WScript.Shell');
+		var cd = shell.currentDirectory;
 
-		var OFN_OVERWRITEPROMPT          = 0x00000002;
-		var OFN_HIDEREADONLY             = 0x00000004;
+		var fso = new ActiveXObject("Scripting.FileSystemObject");
+		var path = window.location.pathname.replace('/', '');
+		path = fso.GetParentFolderName(path);
+		path = '"' + path + '\\file.dialog.exe" -Save ' + '"' + cd + '"';
 
-		var dialog = new ActiveXObject('MSComDlg.CommonDialog');
-		dialog.Flags = OFN_OVERWRITEPROMPT | OFN_HIDEREADONLY;
-		dialog.MaxFileSize = 256;
-		dialog.Filter = 'JSON Files|*.json|All Files|*.*';
-//		dialog.InitDir = '.\\..';
-		dialog.FileName = 'patch.aul.json';
-		dialog.CancelError = true;
-		try {
-			dialog.ShowSave();
-		} catch (e) {
+		var exec = shell.Exec(path);
+		fileName = exec.StdOut.ReadLine();
+
+		if (!fileName)
 			return;
-		}
-
-		fileName = dialog.FileName;
 	}
 
 	// JSON オブジェクトを作成する。
@@ -299,21 +290,29 @@ function saveFile()
 		},
 		"switch" : {
 			"access_key" : getBoolValue('#json #switch #switch_access_key'),
+			"exo_aviutl_filter" : getBoolValue('#json #switch #switch_exo_aviutl_filter'),
 			"exo_track_minusval" : getBoolValue('#json #switch #switch_exo_track_minusval'),
 			"exo_sceneidx" : getBoolValue('#json #switch #switch_exo_sceneidx'),
 			"exo_trackparam" : getBoolValue('#json #switch #switch_exo_trackparam'),
+			"exo_specialcolorconv" : getBoolValue('#json #switch #switch_exo_specialcolorconv'),
 			"text_op_size" : getBoolValue('#json #switch #switch_text_op_size'),
 			"ignore_media_param_reset" : getBoolValue('#json #switch #switch_ignore_media_param_reset'),
 			"theme_cc" : getBoolValue('#json #switch #switch_theme_cc'),
 			"console" : getBoolValue('#json #switch #switch_console'),
-			"console_escape" : getBoolValue('#json #switch #switch_console_escape'),
-			"console_input" : getBoolValue('#json #switch #switch_console_input'),
+			"console.escape" : getBoolValue('#json #switch #switch_console_escape'),
+			"console.input" : getBoolValue('#json #switch #switch_console_input'),
 			"console.debug_string" : getBoolValue('#json #switch #switch_console_debug_string'),
-			"console.debug_string.time" : getBoolValue('#json #switch #switch_console_debug_string_time'),
+			"console.debug_string.time": getBoolValue('#json #switch #switch_console_debug_string_time'),
+
+			"lua" : getBoolValue('#json #switch #switch_lua'),
+			"lua.rand" : getBoolValue('#json #switch #switch_lua_rand'),
+			"lua.randex" : getBoolValue('#json #switch #switch_lua_randex'),
+			"lua.getvalue": getBoolValue('#json #switch #switch_lua_getvalue'),
+
 			"fast" : getBoolValue('#json #switch #switch_fast'),
-			"fast_cl" : getBoolValue('#json #switch #switch_fast_cl'),
-			"fast_radiationalblur" : getBoolValue('#json #switch #switch_fast_radiationalblur'),
-			"fast_polortransform" : getBoolValue('#json #switch #switch_fast_polortransform')
+			"fast.cl" : getBoolValue('#json #switch #switch_fast_cl'),
+			"fast.radiationalblur" : getBoolValue('#json #switch #switch_fast_radiationalblur'),
+			"fast.polortransform" : getBoolValue('#json #switch #switch_fast_polortransform')
 		}
 	};
 

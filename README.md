@@ -1,5 +1,6 @@
 # AviUtl ツール - patch.aul.json 編集
 
+* version 11.0.0 by 蛇色 - 2022/02/09 r11 に対応
 * version 9.0.0 by 蛇色 - 2022/01/08 r9 に対応
 
 patch.aul.json を GUI で編集するツールです。
@@ -18,7 +19,7 @@ patch.aul.gui フォルダを AviUtl フォルダに入れてください。
 
 ## 動作確認
 
-* patch.aul r9 https://www.nicovideo.jp/watch/sm39491708
+* patch.aul r11 https://www.nicovideo.jp/watch/sm39491708
 
 ## 依存関係
 

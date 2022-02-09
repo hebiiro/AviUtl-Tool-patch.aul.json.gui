@@ -24,7 +24,7 @@
 <tr>
 	<td>
 		<h1>
-			patch.aul.json の編集 r9
+			patch.aul.json の編集 r11
 			<span class="tooltip">
 				<input class="button" type="button" id="load" value="Load">
 				<div class="tooltip-text">
@@ -611,6 +611,50 @@
 					</td>
 					<td valign="top" style="padding-left: 1em;">
 						<table border="0" cellspacing="0" cellpadding="0">
+							<tr>
+								<td>
+									<label class="checkbox-label tooltip" for="switch_lua">
+										lua
+										<div class="tooltip-text">
+											Luaの環境を統一する (既定値: true)
+										</div>
+									</label>
+								</td>
+								<td><input class="checkbox" type="checkbox" id="switch_lua" checked></td>
+							</tr>
+							<tr>
+								<td>
+									<label class="checkbox-label tooltip" for="switch_lua_rand">
+										lua.rand
+										<div class="tooltip-text">
+											rand関数で例外になるパターンを潰す (既定値: true)
+										</div>
+									</label>
+								</td>
+								<td><input class="checkbox" type="checkbox" id="switch_lua_rand" checked></td>
+							</tr>
+							<tr>
+								<td>
+									<label class="checkbox-label tooltip" for="switch_lua_randex">
+										lua.randex
+										<div class="tooltip-text">
+											正確な乱数を提供するrandexクラスの追加 (既定値: true)
+										</div>
+									</label>
+								</td>
+								<td><input class="checkbox" type="checkbox" id="switch_lua_randex" checked></td>
+							</tr>
+							<tr>
+								<td>
+									<label class="checkbox-label tooltip" for="switch_lua_getvalue">
+										lua.getvalue
+										<div class="tooltip-text">
+											getvalueで中心座標を取得できるように (既定値: true)
+										</div>
+									</label>
+								</td>
+								<td><input class="checkbox" type="checkbox" id="switch_lua_getvalue" checked></td>
+							</tr>
 							<tr>
 								<td>
 									<label class="checkbox-label tooltip" for="switch_fast">
