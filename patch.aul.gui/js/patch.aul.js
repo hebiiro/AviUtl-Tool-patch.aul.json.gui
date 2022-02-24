@@ -181,8 +181,12 @@ function loadFile(showDialog)
 		setBoolValue('#json #switch #switch_lua_rand', json.switch['lua.rand']);
 		setBoolValue('#json #switch #switch_lua_randex', json.switch['lua.randex']);
 		setBoolValue('#json #switch #switch_lua_getvalue', json.switch['lua.getvalue']);
+		setBoolValue('#json #switch #switch_lua_path', json.switch['lua.path']);
 		setBoolValue('#json #switch #switch_fast', json.switch['fast']);
 		setBoolValue('#json #switch #switch_fast_cl', json.switch['fast.cl']);
+		setBoolValue('#json #switch #switch_fast_exeditwindow', json.switch['fast.exeditwindow']);
+		setIntValue('#json #switch #switch_fast_exeditwindow_step', json.switch['fast.exeditwindow.step']);
+		setBoolValue('#json #switch #switch_fast_settingdialog', json.switch['fast.settingdialog']);
 		setBoolValue('#json #switch #switch_fast_radiationalblur', json.switch['fast.radiationalblur']);
 		setBoolValue('#json #switch #switch_fast_polortransform', json.switch['fast.polortransform']);
 	}
@@ -308,9 +312,13 @@ function saveFile()
 			"lua.rand" : getBoolValue('#json #switch #switch_lua_rand'),
 			"lua.randex" : getBoolValue('#json #switch #switch_lua_randex'),
 			"lua.getvalue": getBoolValue('#json #switch #switch_lua_getvalue'),
+			"lua.path" : getBoolValue('#json #switch #switch_lua_path'),
 
 			"fast" : getBoolValue('#json #switch #switch_fast'),
 			"fast.cl" : getBoolValue('#json #switch #switch_fast_cl'),
+			"fast.exeditwindow" : getBoolValue('#json #switch #switch_fast_exeditwindow'),
+			"fast.exeditwindow.step" : getIntValue('#json #switch #switch_fast_exeditwindow_step'),
+			"fast.settingdialog" : getBoolValue('#json #switch #switch_fast_settingdialog'),
 			"fast.radiationalblur" : getBoolValue('#json #switch #switch_fast_radiationalblur'),
 			"fast.polortransform" : getBoolValue('#json #switch #switch_fast_polortransform')
 		}

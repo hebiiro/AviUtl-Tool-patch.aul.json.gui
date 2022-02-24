@@ -24,7 +24,7 @@
 <tr>
 	<td>
 		<h1>
-			patch.aul.json の編集 r11
+			patch.aul.json の編集 r13
 			<span class="tooltip">
 				<input class="button" type="button" id="load" value="Load">
 				<div class="tooltip-text">
@@ -359,7 +359,8 @@
 			Preview
 			<div class="tooltip-text">
 				変更はリアルタイムで反映される<br>
-				サイズは height_medium が使用される
+				サイズは height_medium が使用される<br>
+				fast.exeditwindow.step には未対応<br>
 			</div>
 		</h2>
 		<table class="preview" border="0" cellspacing="0" cellpadding="0">
@@ -553,6 +554,17 @@
 							</tr>
 							<tr>
 								<td>
+									<label class="checkbox-label tooltip" for="switch_exeditwindow_sizing">
+										exeditwindow_sizing
+										<div class="tooltip-text">
+											拡張編集ウィンドウの上部をドラッグして正常にリサイズできるようにする (既定値: true)
+										</div>
+									</label>
+								</td>
+								<td><input class="checkbox" type="checkbox" id="switch_exeditwindow_sizing" checked></td>
+							</tr>
+							<tr>
+								<td>
 									<label class="checkbox-label tooltip" for="switch_console">
 										console
 										<div class="tooltip-text">
@@ -657,6 +669,21 @@
 							</tr>
 							<tr>
 								<td>
+									<label class="checkbox-label tooltip" for="switch_lua_path">
+										lua.path
+										<div class="tooltip-text">
+											package.path,cpathにパスを追加 (既定値: false)
+										</div>
+									</label>
+								</td>
+								<td><input class="checkbox" type="checkbox" id="switch_lua_path"></td>
+							</tr>
+						</table>
+					</td>
+					<td valign="top" style="padding-left: 1em;">
+						<table border="0" cellspacing="0" cellpadding="0">
+							<tr>
+								<td>
 									<label class="checkbox-label tooltip" for="switch_fast">
 										fast
 										<div class="tooltip-text">
@@ -677,6 +704,41 @@
 								</td>
 								<td><input class="checkbox" type="checkbox" id="switch_fast_cl" checked></td>
 							</tr>
+
+							<tr>
+								<td>
+									<label class="checkbox-label tooltip" for="switch_fast_exeditwindow">
+										fast.exeditwindow
+										<div class="tooltip-text">
+											拡張編集ウィンドウの描画の最適化 (既定値: true)
+										</div>
+									</label>
+								</td>
+								<td><input class="checkbox" type="checkbox" id="switch_fast_exeditwindow" checked></td>
+							</tr>
+							<tr>
+								<td>
+									<label class="checkbox-label tooltip" for="switch_fast_exeditwindow_step">
+										fast.exeditwindow.step
+										<div class="tooltip-text">
+											グラデーション描画の方法 (負数でパッチ無効,0でグラデーションのパッチ,正数でその分割数の単色矩形 既定値: 0)
+										</div>
+									</label>
+								</td>
+								<td><input class="int-value" type="text" id="switch_fast_exeditwindow_step" value="0"></td>
+							</tr>
+							<tr>
+								<td>
+									<label class="checkbox-label tooltip" for="switch_fast_settingdialog">
+										fast.settingdialog
+										<div class="tooltip-text">
+											設定ダイアログの描画の最適化 (既定値: true)
+										</div>
+									</label>
+								</td>
+								<td><input class="checkbox" type="checkbox" id="switch_fast_settingdialog" checked></td>
+							</tr>
+
 							<tr>
 								<td>
 									<label class="checkbox-label tooltip" for="switch_fast_radiationalblur">
