@@ -1,5 +1,3 @@
-$(function(){
-
 function setBoolValue(selector, value)
 {
 	$(selector).prop('checked', value);
@@ -78,7 +76,7 @@ function loadFile(showDialog)
 		file.Close();
 		var json = JSON.parse(to_json);
 	} catch (e) {
-		alert('Error');
+		alert(fileName + ' を開けませんでした');
 		return;
 	}
 
@@ -178,6 +176,7 @@ function loadFile(showDialog)
 		setBoolValue('#json #switch #switch_console_debug_string', json.switch['console.debug_string']);
 		setBoolValue('#json #switch #switch_console_debug_string_time', json.switch['console.debug_string.time']);
 		setBoolValue('#json #switch #switch_lua', json.switch['lua']);
+		setBoolValue('#json #switch #switch_lua_env', json.switch['lua.env']);
 		setBoolValue('#json #switch #switch_lua_rand', json.switch['lua.rand']);
 		setBoolValue('#json #switch #switch_lua_randex', json.switch['lua.randex']);
 		setBoolValue('#json #switch #switch_lua_getvalue', json.switch['lua.getvalue']);
@@ -309,6 +308,7 @@ function saveFile()
 			"console.debug_string.time": getBoolValue('#json #switch #switch_console_debug_string_time'),
 
 			"lua" : getBoolValue('#json #switch #switch_lua'),
+			"lua.env" : getBoolValue('#json #switch #switch_lua_env'),
 			"lua.rand" : getBoolValue('#json #switch #switch_lua_rand'),
 			"lua.randex" : getBoolValue('#json #switch #switch_lua_randex'),
 			"lua.getvalue": getBoolValue('#json #switch #switch_lua_getvalue'),
@@ -392,6 +392,8 @@ function refreshPreview()
 //	$('.preview .inactive-layer').css('opacity', getFloatValue('#json #theme_cc #layer #hide_alpha'));
 }
 
+$(function(){
+
 $(document).ready(function()
 {
 	// 初期設定。
@@ -447,6 +449,16 @@ $('input[type="reset"]').click(function()
 {
 	// すべての input を初期値に戻す。
 	$('#form')[0].reset();
+
+	// spectrum をリセットする。
+	$('input[type="color"]').spectrum('destroy');
+	$('input[type="color"]').spectrum({
+		change: refreshPreview,
+		move: refreshPreview,
+		preferredFormat: 'hex',
+		showInitial: true,
+		showInput: true
+	});
 
 	// プレビューを更新する。
 	refreshPreview();

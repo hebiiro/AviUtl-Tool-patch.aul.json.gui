@@ -1,5 +1,6 @@
 # AviUtl ツール - patch.aul.json 編集
 
+* version 16.0.0 by 蛇色 - 2022/04/03 r16 に対応
 * version 13.0.0 by 蛇色 - 2022/02/24 r13 に対応
 * version 11.0.0 by 蛇色 - 2022/02/09 r11 に対応
 * version 9.0.0 by 蛇色 - 2022/01/08 r9 に対応
@@ -20,7 +21,7 @@ patch.aul.gui フォルダを AviUtl フォルダに入れてください。
 
 ## 動作確認
 
-* patch.aul r13 https://www.nicovideo.jp/watch/sm40087155
+* patch.aul r16 https://www.nicovideo.jp/watch/sm40087155
 
 ## 依存関係
 
