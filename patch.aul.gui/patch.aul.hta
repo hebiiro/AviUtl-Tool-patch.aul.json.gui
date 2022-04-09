@@ -24,7 +24,7 @@
 <tr>
 	<td>
 		<h1>
-			patch.aul.json の編集 r16
+			patch.aul.json の編集 r17
 			<span class="tooltip">
 				<input class="button" type="button" id="load" value="Load">
 				<div class="tooltip-text">
@@ -438,344 +438,390 @@
 			</div>
 		</h2>
 		<div class="node" id="switch">
-			<table border="0" cellspacing="0" cellpadding="0">
-				<tr>
-					<td valign="top">
-						<table border="0" cellspacing="0" cellpadding="0">
-							<tr>
-								<td>
-									<label class="checkbox-label tooltip" for="switch_access_key">
-										access_key
-										<div class="tooltip-text">
-											アクセスキーを付加するか (既定値: false)
-										</div>
-									</label>
-								</td>
-								<td><input class="checkbox" type="checkbox" id="switch_access_key"></td>
-							</tr>
-							<tr>
-								<td>
-									<label class="checkbox-label tooltip" for="switch_exo_aviutl_filter">
-										exo_aviutl_filter
-										<div class="tooltip-text">
-											拡張編集以外のフィルタ(例:拡張色調補正)を使ったプロジェクトを<br>
-											オブジェクトファイルに出力できないことがある (既定値: true)
-										</div>
-									</label>
-								</td>
-								<td><input class="checkbox" type="checkbox" id="switch_exo_aviutl_filter" checked></td>
-							</tr>
-							<tr>
-								<td>
-									<label class="checkbox-label tooltip" for="switch_exo_track_minusval">
-										exo_track_minusval
-										<div class="tooltip-text">
-											オブジェクトファイルの入力で、<br>
-											トラックバーの -1 超 0 未満の値が正になってしまう (既定値: true)
-										</div>
-									</label>
-								</td>
-								<td><input class="checkbox" type="checkbox" id="switch_exo_track_minusval" checked></td>
-							</tr>
-							<tr>
-								<td>
-									<label class="checkbox-label tooltip" for="switch_exo_sceneidx">
-										exo_sceneidx
-										<div class="tooltip-text">
-											オブジェクトファイルの入出力で、<br>
-											シーン番号を正しく扱えない (既定値: true)
-										</div>
-									</label>
-								</td>
-								<td><input class="checkbox" type="checkbox" id="switch_exo_sceneidx" checked></td>
-							</tr>
-							<tr>
-								<td>
-									<label class="checkbox-label tooltip" for="switch_exo_trackparam">
-										exo_trackparam
-										<div class="tooltip-text">
-											オブジェクトファイルの入力で、トラックバー変化方法スクリプトの名前に<br>
-											ASCII以外の文字が含まれているとパラメータを読み込めない (既定値: true)
-										</div>
-									</label>
-								</td>
-								<td><input class="checkbox" type="checkbox" id="switch_exo_trackparam" checked></td>
-							</tr>
-							<tr>
-								<td>
-									<label class="checkbox-label tooltip" for="switch_exo_specialcolorconv">
-										exo_specialcolorconv
-										<div class="tooltip-text">
-											オブジェクトファイルの入出力で、<br>
-											特定色域変換のstatusが2つあって正しく入出力できない (既定値: true)
-										</div>
-									</label>
-								</td>
-								<td><input class="checkbox" type="checkbox" id="switch_exo_specialcolorconv" checked></td>
-							</tr>
-							<tr>
-								<td>
-									<label class="checkbox-label tooltip" for="switch_text_op_size">
-										text_op_size
-										<div class="tooltip-text">
-											テキストオブジェクトでUTF-16で34バイト以上のフォント名を指定している時、<br>
-											制御文字&lt;s&gt;でサイズのみを指定していると正しい動作をしない (既定値: true)
-										</div>
-									</label>
-								</td>
-								<td><input class="checkbox" type="checkbox" id="switch_text_op_size" checked></td>
-							</tr>
-							<tr>
-								<td>
-									<label class="checkbox-label tooltip" for="switch_ignore_media_param_reset">
-										ignore_media_param_reset
-										<div class="tooltip-text">
-											動画ファイル と 音声ファイル で中間点を打っていないときでも<br>
-											ファイルを再参照しても再生位置などの情報を変更しない (既定値: false)
-										</div>
-									</label>
-								</td>
-								<td><input class="checkbox" type="checkbox" id="switch_ignore_media_param_reset"></td>
-							</tr>
-						</table>
-					</td>
-					<td valign="top" style="padding-left: 1em;">
-						<table border="0" cellspacing="0" cellpadding="0">
-							<tr>
-								<td>
-									<label class="checkbox-label tooltip" for="switch_theme_cc">
-										theme_cc
-										<div class="tooltip-text">
-											テーマ機能 (既定値: true)
-										</div>
-									</label>
-								</td>
-								<td><input class="checkbox" type="checkbox" id="switch_theme_cc" checked></td>
-							</tr>
-							<tr>
-								<td>
-									<label class="checkbox-label tooltip" for="switch_exeditwindow_sizing">
-										exeditwindow_sizing
-										<div class="tooltip-text">
-											拡張編集ウィンドウの上部をドラッグして正常にリサイズできるようにする (既定値: true)
-										</div>
-									</label>
-								</td>
-								<td><input class="checkbox" type="checkbox" id="switch_exeditwindow_sizing" checked></td>
-							</tr>
-							<tr>
-								<td>
-									<label class="checkbox-label tooltip" for="switch_console">
-										console
-										<div class="tooltip-text">
-											コンソール (既定値: true)
-										</div>
-									</label>
-								</td>
-								<td><input class="checkbox" type="checkbox" id="switch_console" checked></td>
-							</tr>
-							<tr>
-								<td>
-									<label class="checkbox-label tooltip" for="switch_console_escape">
-										console.escape
-										<div class="tooltip-text">
-											エスケープシーケンス (既定値: true)
-										</div>
-									</label>
-								</td>
-								<td><input class="checkbox" type="checkbox" id="switch_console_escape" checked></td>
-							</tr>
-							<tr>
-								<td>
-									<label class="checkbox-label tooltip" for="switch_console_input">
-										console.input
-										<div class="tooltip-text">
-											標準入力を受け取るか (既定値: false)
-										</div>
-									</label>
-								</td>
-								<td><input class="checkbox" type="checkbox" id="switch_console_input"></td>
-							</tr>
-							<tr>
-								<td>
-									<label class="checkbox-label tooltip" for="switch_console_debug_string">
-										console.debug_string
-										<div class="tooltip-text">
-											拡張編集のOutputDebugStringの内容を表示する (既定値: true)
-										</div>
-									</label>
-								</td>
-								<td><input class="checkbox" type="checkbox" id="switch_console_debug_string" checked></td>
-							</tr>
-							<tr>
-								<td>
-									<label class="checkbox-label tooltip" for="switch_console_debug_string_time">
-										console.debug_string.time
-										<div class="tooltip-text">
-											拡張編集のOutputDebugStringの内容の先頭に時刻を表示する (既定値: true)
-										</div>
-									</label>
-								</td>
-								<td><input class="checkbox" type="checkbox" id="switch_console_debug_string_time" checked></td>
-								</td>
-							</tr>
-						</table>
-					</td>
-					<td valign="top" style="padding-left: 1em;">
-						<table border="0" cellspacing="0" cellpadding="0">
-							<tr>
-								<td>
-									<label class="checkbox-label tooltip" for="switch_lua">
-										lua
-										<div class="tooltip-text">
-											Luaの環境を統一する (既定値: true)
-										</div>
-									</label>
-								</td>
-								<td><input class="checkbox" type="checkbox" id="switch_lua" checked></td>
-							</tr>
-							<tr>
-								<td>
-									<label class="checkbox-label tooltip" for="switch_lua_env">
-										lua.env
-										<div class="tooltip-text">
-											Luaの環境を統一する (既定値: false)
-										</div>
-									</label>
-								</td>
-								<td><input class="checkbox" type="checkbox" id="switch_lua_env"></td>
-							</tr>
-							<tr>
-								<td>
-									<label class="checkbox-label tooltip" for="switch_lua_rand">
-										lua.rand
-										<div class="tooltip-text">
-											rand関数で例外になるパターンを潰す (既定値: true)
-										</div>
-									</label>
-								</td>
-								<td><input class="checkbox" type="checkbox" id="switch_lua_rand" checked></td>
-							</tr>
-							<tr>
-								<td>
-									<label class="checkbox-label tooltip" for="switch_lua_randex">
-										lua.randex
-										<div class="tooltip-text">
-											正確な乱数を提供するrandexクラスの追加 (既定値: true)
-										</div>
-									</label>
-								</td>
-								<td><input class="checkbox" type="checkbox" id="switch_lua_randex" checked></td>
-							</tr>
-							<tr>
-								<td>
-									<label class="checkbox-label tooltip" for="switch_lua_getvalue">
-										lua.getvalue
-										<div class="tooltip-text">
-											getvalueで中心座標を取得できるように (既定値: true)
-										</div>
-									</label>
-								</td>
-								<td><input class="checkbox" type="checkbox" id="switch_lua_getvalue" checked></td>
-							</tr>
-							<tr>
-								<td>
-									<label class="checkbox-label tooltip" for="switch_lua_path">
-										lua.path
-										<div class="tooltip-text">
-											package.path,cpathにパスを追加 (既定値: false)
-										</div>
-									</label>
-								</td>
-								<td><input class="checkbox" type="checkbox" id="switch_lua_path"></td>
-							</tr>
-						</table>
-					</td>
-					<td valign="top" style="padding-left: 1em;">
-						<table border="0" cellspacing="0" cellpadding="0">
-							<tr>
-								<td>
-									<label class="checkbox-label tooltip" for="switch_fast">
-										fast
-										<div class="tooltip-text">
-											fast.*配下のスイッチの主電源 (既定値: true)
-										</div>
-									</label>
-								</td>
-								<td><input class="checkbox" type="checkbox" id="switch_fast" checked></td>
-							</tr>
-							<tr>
-								<td>
-									<label class="checkbox-label tooltip" for="switch_fast_cl">
-										fast.cl
-										<div class="tooltip-text">
-											fast.*でOpenCLが必要なオプションに必要なオプション (既定値: true)
-										</div>
-									</label>
-								</td>
-								<td><input class="checkbox" type="checkbox" id="switch_fast_cl" checked></td>
-							</tr>
-
-							<tr>
-								<td>
-									<label class="checkbox-label tooltip" for="switch_fast_exeditwindow">
-										fast.exeditwindow
-										<div class="tooltip-text">
-											拡張編集ウィンドウの描画の最適化 (既定値: true)
-										</div>
-									</label>
-								</td>
-								<td><input class="checkbox" type="checkbox" id="switch_fast_exeditwindow" checked></td>
-							</tr>
-							<tr>
-								<td>
-									<label class="checkbox-label tooltip" for="switch_fast_exeditwindow_step">
-										fast.exeditwindow.step
-										<div class="tooltip-text">
-											グラデーション描画の方法 (負数でパッチ無効,0でグラデーションのパッチ,正数でその分割数の単色矩形 既定値: 0)
-										</div>
-									</label>
-								</td>
-								<td><input class="int-value" type="text" id="switch_fast_exeditwindow_step" value="0"></td>
-							</tr>
-							<tr>
-								<td>
-									<label class="checkbox-label tooltip" for="switch_fast_settingdialog">
-										fast.settingdialog
-										<div class="tooltip-text">
-											設定ダイアログの描画の最適化 (既定値: true)
-										</div>
-									</label>
-								</td>
-								<td><input class="checkbox" type="checkbox" id="switch_fast_settingdialog" checked></td>
-							</tr>
-
-							<tr>
-								<td>
-									<label class="checkbox-label tooltip" for="switch_fast_radiationalblur">
-										fast.radiationalblur
-										<div class="tooltip-text">
-											fast.clが前提 放射ブラーの高速化 (既定値: true)
-										</div>
-									</label>
-								</td>
-								<td><input class="checkbox" type="checkbox" id="switch_fast_radiationalblur" checked></td>
-							</tr>
-							<tr>
-								<td>
-									<label class="checkbox-label tooltip" for="switch_fast_polortransform">
-										fast.polortransform
-										<div class="tooltip-text">
-											fast.clが前提 極座標変換の高速化 (既定値: true)
-										</div>
-									</label>
-								</td>
-								<td><input class="checkbox" type="checkbox" id="switch_fast_polortransform" checked></td>
-							</tr>
-						</table>
-					</td>
-				</tr>
-			</table>
+<table border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td valign="top">
+<table border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td>
+			<label class="checkbox-label tooltip" for="switch_access_key">
+				access_key
+				<div class="tooltip-text">
+					アクセスキーを付加するか (既定値: false)
+				</div>
+			</label>
+		</td>
+		<td><input class="checkbox" type="checkbox" id="switch_access_key"></td>
+	</tr>
+	<tr>
+		<td>
+			<label class="checkbox-label tooltip" for="switch_exo_aviutl_filter">
+				exo_aviutl_filter
+				<div class="tooltip-text">
+					拡張編集以外のフィルタ(例:拡張色調補正)を使ったプロジェクトを<br>
+					オブジェクトファイルに出力できないことがある (既定値: true)
+				</div>
+			</label>
+		</td>
+		<td><input class="checkbox" type="checkbox" id="switch_exo_aviutl_filter" checked></td>
+	</tr>
+	<tr>
+		<td>
+			<label class="checkbox-label tooltip" for="switch_exo_track_minusval">
+				exo_track_minusval
+				<div class="tooltip-text">
+					オブジェクトファイルの入力で、<br>
+					トラックバーの -1 超 0 未満の値が正になってしまう (既定値: true)
+				</div>
+			</label>
+		</td>
+		<td><input class="checkbox" type="checkbox" id="switch_exo_track_minusval" checked></td>
+	</tr>
+	<tr>
+		<td>
+			<label class="checkbox-label tooltip" for="switch_exo_sceneidx">
+				exo_sceneidx
+				<div class="tooltip-text">
+					オブジェクトファイルの入出力で、<br>
+					シーン番号を正しく扱えない (既定値: true)
+				</div>
+			</label>
+		</td>
+		<td><input class="checkbox" type="checkbox" id="switch_exo_sceneidx" checked></td>
+	</tr>
+	<tr>
+		<td>
+			<label class="checkbox-label tooltip" for="switch_exo_trackparam">
+				exo_trackparam
+				<div class="tooltip-text">
+					オブジェクトファイルの入力で、トラックバー変化方法スクリプトの名前に<br>
+					ASCII以外の文字が含まれているとパラメータを読み込めない (既定値: true)
+				</div>
+			</label>
+		</td>
+		<td><input class="checkbox" type="checkbox" id="switch_exo_trackparam" checked></td>
+	</tr>
+	<tr>
+		<td>
+			<label class="checkbox-label tooltip" for="switch_exo_specialcolorconv">
+				exo_specialcolorconv
+				<div class="tooltip-text">
+					オブジェクトファイルの入出力で、<br>
+					特定色域変換のstatusが2つあって正しく入出力できない (既定値: true)
+				</div>
+			</label>
+		</td>
+		<td><input class="checkbox" type="checkbox" id="switch_exo_specialcolorconv" checked></td>
+	</tr>
+	<tr>
+		<td>
+			<label class="checkbox-label tooltip" for="switch_text_op_size">
+				text_op_size
+				<div class="tooltip-text">
+					テキストオブジェクトでUTF-16で34バイト以上のフォント名を指定している時、<br>
+					制御文字&lt;s&gt;でサイズのみを指定していると正しい動作をしない (既定値: true)
+				</div>
+			</label>
+		</td>
+		<td><input class="checkbox" type="checkbox" id="switch_text_op_size" checked></td>
+	</tr>
+	<tr>
+		<td>
+			<label class="checkbox-label tooltip" for="switch_ignore_media_param_reset">
+				ignore_media_param_reset
+				<div class="tooltip-text">
+					動画ファイル と 音声ファイル で中間点を打っていないときでも<br>
+					ファイルを再参照しても再生位置などの情報を変更しない (既定値: false)
+				</div>
+			</label>
+		</td>
+		<td><input class="checkbox" type="checkbox" id="switch_ignore_media_param_reset"></td>
+	</tr>
+</table>
+		</td>
+		<td valign="top" style="padding-left: 1em;">
+<table border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td>
+			<label class="checkbox-label tooltip" for="switch_theme_cc">
+				theme_cc
+				<div class="tooltip-text">
+					テーマ機能 (既定値: true)
+				</div>
+			</label>
+		</td>
+		<td><input class="checkbox" type="checkbox" id="switch_theme_cc" checked></td>
+	</tr>
+	<tr>
+		<td>
+			<label class="checkbox-label tooltip" for="switch_exeditwindow_sizing">
+				exeditwindow_sizing
+				<div class="tooltip-text">
+					拡張編集ウィンドウの上部をドラッグして正常にリサイズできるようにする (既定値: true)
+				</div>
+			</label>
+		</td>
+		<td><input class="checkbox" type="checkbox" id="switch_exeditwindow_sizing" checked></td>
+	</tr>
+	<tr>
+		<td>
+			<label class="checkbox-label tooltip" for="switch_settingdialog_move">
+				settingdialog_move
+				<div class="tooltip-text">
+					設定ダイアログを高ポーリングレートマウス環境で移動すると重たい の解消 (既定値: true)
+				</div>
+			</label>
+		</td>
+		<td><input class="checkbox" type="checkbox" id="switch_settingdialog_move" checked></td>
+	</tr>
+	<tr>
+		<td>
+			<label class="checkbox-label tooltip" for="switch_undo">
+				undo
+				<div class="tooltip-text">
+					元に戻す 関連のバグ修正 (既定値: true)
+				</div>
+			</label>
+		</td>
+		<td><input class="checkbox" type="checkbox" id="switch_undo" checked></td>
+	</tr>
+	<tr>
+		<td>
+			<label class="checkbox-label tooltip" for="switch_undo_redo">
+				undo.redo
+				<div class="tooltip-text">
+					やり直す を追加 (既定値: true)
+				</div>
+			</label>
+		</td>
+		<td><input class="checkbox" type="checkbox" id="switch_undo_redo" checked></td>
+	</tr>
+	<tr>
+		<td>
+			<label class="checkbox-label tooltip" for="switch_undo_redo_shift">
+				undo.redo.shift
+				<div class="tooltip-text">
+					やり直す を Ctrl+Shift+Zで使えるようにする (既定値: true)
+				</div>
+			</label>
+		</td>
+		<td><input class="checkbox" type="checkbox" id="switch_undo_redo_shift" checked></td>
+	</tr>
+</table>
+		</td>
+		<td valign="top" style="padding-left: 1em;">
+<table border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td>
+			<label class="checkbox-label tooltip" for="switch_console">
+				console
+				<div class="tooltip-text">
+					コンソール (既定値: true)
+				</div>
+			</label>
+		</td>
+		<td><input class="checkbox" type="checkbox" id="switch_console" checked></td>
+	</tr>
+	<tr>
+		<td>
+			<label class="checkbox-label tooltip" for="switch_console_escape">
+				console.escape
+				<div class="tooltip-text">
+					エスケープシーケンス (既定値: true)
+				</div>
+			</label>
+		</td>
+		<td><input class="checkbox" type="checkbox" id="switch_console_escape" checked></td>
+	</tr>
+	<tr>
+		<td>
+			<label class="checkbox-label tooltip" for="switch_console_input">
+				console.input
+				<div class="tooltip-text">
+					標準入力を受け取るか (既定値: false)
+				</div>
+			</label>
+		</td>
+		<td><input class="checkbox" type="checkbox" id="switch_console_input"></td>
+	</tr>
+	<tr>
+		<td>
+			<label class="checkbox-label tooltip" for="switch_console_debug_string">
+				console.debug_string
+				<div class="tooltip-text">
+					拡張編集のOutputDebugStringの内容を表示する (既定値: true)
+				</div>
+			</label>
+		</td>
+		<td><input class="checkbox" type="checkbox" id="switch_console_debug_string" checked></td>
+	</tr>
+	<tr>
+		<td>
+			<label class="checkbox-label tooltip" for="switch_console_debug_string_time">
+				console.debug_string.time
+				<div class="tooltip-text">
+					拡張編集のOutputDebugStringの内容の先頭に時刻を表示する (既定値: true)
+				</div>
+			</label>
+		</td>
+		<td><input class="checkbox" type="checkbox" id="switch_console_debug_string_time" checked></td>
+		</td>
+	</tr>
+</table>
+		</td>
+		<td valign="top" style="padding-left: 1em;">
+<table border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td>
+			<label class="checkbox-label tooltip" for="switch_lua">
+				lua
+				<div class="tooltip-text">
+					Luaの環境を統一する (既定値: true)
+				</div>
+			</label>
+		</td>
+		<td><input class="checkbox" type="checkbox" id="switch_lua" checked></td>
+	</tr>
+	<tr>
+		<td>
+			<label class="checkbox-label tooltip" for="switch_lua_env">
+				lua.env
+				<div class="tooltip-text">
+					Luaの環境を統一する (既定値: false)
+				</div>
+			</label>
+		</td>
+		<td><input class="checkbox" type="checkbox" id="switch_lua_env"></td>
+	</tr>
+	<tr>
+		<td>
+			<label class="checkbox-label tooltip" for="switch_lua_rand">
+				lua.rand
+				<div class="tooltip-text">
+					rand関数で例外になるパターンを潰す (既定値: true)
+				</div>
+			</label>
+		</td>
+		<td><input class="checkbox" type="checkbox" id="switch_lua_rand" checked></td>
+	</tr>
+	<tr>
+		<td>
+			<label class="checkbox-label tooltip" for="switch_lua_randex">
+				lua.randex
+				<div class="tooltip-text">
+					正確な乱数を提供するrandexクラスの追加 (既定値: true)
+				</div>
+			</label>
+		</td>
+		<td><input class="checkbox" type="checkbox" id="switch_lua_randex" checked></td>
+	</tr>
+	<tr>
+		<td>
+			<label class="checkbox-label tooltip" for="switch_lua_getvalue">
+				lua.getvalue
+				<div class="tooltip-text">
+					getvalueで中心座標を取得できるように (既定値: true)
+				</div>
+			</label>
+		</td>
+		<td><input class="checkbox" type="checkbox" id="switch_lua_getvalue" checked></td>
+	</tr>
+	<tr>
+		<td>
+			<label class="checkbox-label tooltip" for="switch_lua_path">
+				lua.path
+				<div class="tooltip-text">
+					package.path,cpathにパスを追加 (既定値: false)
+				</div>
+			</label>
+		</td>
+		<td><input class="checkbox" type="checkbox" id="switch_lua_path"></td>
+	</tr>
+</table>
+		</td>
+		<td valign="top" style="padding-left: 1em;">
+<table border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td>
+			<label class="checkbox-label tooltip" for="switch_fast">
+				fast
+				<div class="tooltip-text">
+					fast.*配下のスイッチの主電源 (既定値: true)
+				</div>
+			</label>
+		</td>
+		<td><input class="checkbox" type="checkbox" id="switch_fast" checked></td>
+	</tr>
+	<tr>
+		<td>
+			<label class="checkbox-label tooltip" for="switch_fast_cl">
+				fast.cl
+				<div class="tooltip-text">
+					fast.*でOpenCLが必要なオプションに必要なオプション (既定値: true)
+				</div>
+			</label>
+		</td>
+		<td><input class="checkbox" type="checkbox" id="switch_fast_cl" checked></td>
+	</tr>
+	<tr>
+		<td>
+			<label class="checkbox-label tooltip" for="switch_fast_exeditwindow">
+				fast.exeditwindow
+				<div class="tooltip-text">
+					拡張編集ウィンドウの描画の最適化 (既定値: true)
+				</div>
+			</label>
+		</td>
+		<td><input class="checkbox" type="checkbox" id="switch_fast_exeditwindow" checked></td>
+	</tr>
+	<tr>
+		<td>
+			<label class="checkbox-label tooltip" for="switch_fast_exeditwindow_step">
+				fast.exeditwindow.step
+				<div class="tooltip-text">
+					グラデーション描画の方法 (負数でパッチ無効,0でグラデーションのパッチ,正数でその分割数の単色矩形 既定値: 0)
+				</div>
+			</label>
+		</td>
+		<td><input class="int-value" type="text" id="switch_fast_exeditwindow_step" value="0"></td>
+	</tr>
+	<tr>
+		<td>
+			<label class="checkbox-label tooltip" for="switch_fast_settingdialog">
+				fast.settingdialog
+				<div class="tooltip-text">
+					設定ダイアログの描画の最適化 (既定値: true)
+				</div>
+			</label>
+		</td>
+		<td><input class="checkbox" type="checkbox" id="switch_fast_settingdialog" checked></td>
+	</tr>
+	<tr>
+		<td>
+			<label class="checkbox-label tooltip" for="switch_fast_radiationalblur">
+				fast.radiationalblur
+				<div class="tooltip-text">
+					fast.clが前提 放射ブラーの高速化 (既定値: true)
+				</div>
+			</label>
+		</td>
+		<td><input class="checkbox" type="checkbox" id="switch_fast_radiationalblur" checked></td>
+	</tr>
+	<tr>
+		<td>
+			<label class="checkbox-label tooltip" for="switch_fast_polortransform">
+				fast.polortransform
+				<div class="tooltip-text">
+					fast.clが前提 極座標変換の高速化 (既定値: true)
+				</div>
+			</label>
+		</td>
+		<td><input class="checkbox" type="checkbox" id="switch_fast_polortransform" checked></td>
+	</tr>
+</table>
+		</td>
+	</tr>
+</table>
 		</div>
 	</td>
 </tr>

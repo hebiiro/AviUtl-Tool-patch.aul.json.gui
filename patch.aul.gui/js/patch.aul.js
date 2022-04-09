@@ -170,6 +170,11 @@ function loadFile(showDialog)
 		setBoolValue('#json #switch #switch_text_op_size', json.switch['text_op_size']);
 		setBoolValue('#json #switch #switch_ignore_media_param_reset', json.switch['ignore_media_param_reset']);
 		setBoolValue('#json #switch #switch_theme_cc', json.switch['theme_cc']);
+		setBoolValue('#json #switch #switch_exeditwindow_sizing', json.switch['exeditwindow_sizing']);
+		setBoolValue('#json #switch #switch_settingdialog_move', json.switch['settingdialog_move']);
+		setBoolValue('#json #switch #switch_undo', json.switch['undo']);
+		setBoolValue('#json #switch #switch_undo_redo', json.switch['undo.redo']);
+		setBoolValue('#json #switch #switch_undo_redo_shift', json.switch['undo.redo.shift']);
 		setBoolValue('#json #switch #switch_console', json.switch['console']);
 		setBoolValue('#json #switch #switch_console_escape', json.switch['console.escape']);
 		setBoolValue('#json #switch #switch_console_input', json.switch['console.input']);
@@ -301,19 +306,22 @@ function saveFile()
 			"text_op_size" : getBoolValue('#json #switch #switch_text_op_size'),
 			"ignore_media_param_reset" : getBoolValue('#json #switch #switch_ignore_media_param_reset'),
 			"theme_cc" : getBoolValue('#json #switch #switch_theme_cc'),
+			"exeditwindow_sizing" : getBoolValue('#json #switch #switch_exeditwindow_sizing'),
+			"settingdialog_move" : getBoolValue('#json #switch #switch_settingdialog_move'),
+			"undo": getBoolValue('#json #switch #switch_undo'),
+			"undo.redo": getBoolValue('#json #switch #switch_undo_redo'),
+			"undo.redo.shift": getBoolValue('#json #switch #switch_undo_redo_shift'),
 			"console" : getBoolValue('#json #switch #switch_console'),
 			"console.escape" : getBoolValue('#json #switch #switch_console_escape'),
 			"console.input" : getBoolValue('#json #switch #switch_console_input'),
 			"console.debug_string" : getBoolValue('#json #switch #switch_console_debug_string'),
 			"console.debug_string.time": getBoolValue('#json #switch #switch_console_debug_string_time'),
-
 			"lua" : getBoolValue('#json #switch #switch_lua'),
 			"lua.env" : getBoolValue('#json #switch #switch_lua_env'),
 			"lua.rand" : getBoolValue('#json #switch #switch_lua_rand'),
 			"lua.randex" : getBoolValue('#json #switch #switch_lua_randex'),
 			"lua.getvalue": getBoolValue('#json #switch #switch_lua_getvalue'),
 			"lua.path" : getBoolValue('#json #switch #switch_lua_path'),
-
 			"fast" : getBoolValue('#json #switch #switch_fast'),
 			"fast.cl" : getBoolValue('#json #switch #switch_fast_cl'),
 			"fast.exeditwindow" : getBoolValue('#json #switch #switch_fast_exeditwindow'),
