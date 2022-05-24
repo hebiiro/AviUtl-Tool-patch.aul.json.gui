@@ -160,39 +160,47 @@ function loadFile(showDialog)
 		}
 	}
 
+	if (json.redo) {
+		setBoolValue('#redo_shift', json.redo['shift']);
+	}
+
+	if (json.fast_exeditwindow) {
+		setIntValue('#fast_exeditwindow_step', json.fast_exeditwindow['step']);
+	}
+
 	if (json.switch) {
-		setBoolValue('#json #switch #switch_access_key', json.switch['access_key']);
-		setBoolValue('#json #switch #switch_exo_aviutl_filter', json.switch['exo_aviutl_filter']);
-		setBoolValue('#json #switch #switch_exo_track_minusval', json.switch['exo_track_minusval']);
-		setBoolValue('#json #switch #switch_exo_sceneidx', json.switch['exo_sceneidx']);
-		setBoolValue('#json #switch #switch_exo_trackparam', json.switch['exo_trackparam']);
-		setBoolValue('#json #switch #switch_exo_specialcolorconv', json.switch['exo_specialcolorconv']);
-		setBoolValue('#json #switch #switch_text_op_size', json.switch['text_op_size']);
-		setBoolValue('#json #switch #switch_ignore_media_param_reset', json.switch['ignore_media_param_reset']);
-		setBoolValue('#json #switch #switch_theme_cc', json.switch['theme_cc']);
-		setBoolValue('#json #switch #switch_exeditwindow_sizing', json.switch['exeditwindow_sizing']);
-		setBoolValue('#json #switch #switch_settingdialog_move', json.switch['settingdialog_move']);
-		setBoolValue('#json #switch #switch_undo', json.switch['undo']);
-		setBoolValue('#json #switch #switch_undo_redo', json.switch['undo.redo']);
-		setBoolValue('#json #switch #switch_undo_redo_shift', json.switch['undo.redo.shift']);
-		setBoolValue('#json #switch #switch_console', json.switch['console']);
-		setBoolValue('#json #switch #switch_console_escape', json.switch['console.escape']);
-		setBoolValue('#json #switch #switch_console_input', json.switch['console.input']);
-		setBoolValue('#json #switch #switch_console_debug_string', json.switch['console.debug_string']);
-		setBoolValue('#json #switch #switch_console_debug_string_time', json.switch['console.debug_string.time']);
-		setBoolValue('#json #switch #switch_lua', json.switch['lua']);
-		setBoolValue('#json #switch #switch_lua_env', json.switch['lua.env']);
-		setBoolValue('#json #switch #switch_lua_rand', json.switch['lua.rand']);
-		setBoolValue('#json #switch #switch_lua_randex', json.switch['lua.randex']);
-		setBoolValue('#json #switch #switch_lua_getvalue', json.switch['lua.getvalue']);
-		setBoolValue('#json #switch #switch_lua_path', json.switch['lua.path']);
-		setBoolValue('#json #switch #switch_fast', json.switch['fast']);
-		setBoolValue('#json #switch #switch_fast_cl', json.switch['fast.cl']);
-		setBoolValue('#json #switch #switch_fast_exeditwindow', json.switch['fast.exeditwindow']);
-		setIntValue('#json #switch #switch_fast_exeditwindow_step', json.switch['fast.exeditwindow.step']);
-		setBoolValue('#json #switch #switch_fast_settingdialog', json.switch['fast.settingdialog']);
-		setBoolValue('#json #switch #switch_fast_radiationalblur', json.switch['fast.radiationalblur']);
-		setBoolValue('#json #switch #switch_fast_polortransform', json.switch['fast.polortransform']);
+		setBoolValue('#switch_access_key', json.switch['access_key']);
+		setBoolValue('#switch_exo_aviutl_filter', json.switch['exo_aviutl_filter']);
+		setBoolValue('#switch_exo_sceneidx', json.switch['exo_sceneidx']);
+		setBoolValue('#switch_exo_trackparam', json.switch['exo_trackparam']);
+		setBoolValue('#switch_exo_track_minusval', json.switch['exo_track_minusval']);
+		setBoolValue('#switch_exo_specialcolorconv', json.switch['exo_specialcolorconv']);
+		setBoolValue('#switch_tra_aviutlfilter', json.switch['tra_aviutlfilter']);
+		setBoolValue('#switch_text_op_size', json.switch['text_op_size']);
+		setBoolValue('#switch_ignore_media_param_reset', json.switch['ignore_media_param_reset']);
+		setBoolValue('#switch_theme_cc', json.switch['theme_cc']);
+		setBoolValue('#switch_exeditwindow_sizing', json.switch['exeditwindow_sizing']);
+		setBoolValue('#switch_settingdialog_move', json.switch['settingdialog_move']);
+		setBoolValue('#switch_undo', json.switch['undo']);
+		setBoolValue('#switch_undo_redo', json.switch['undo.redo']);
+		setBoolValue('#switch_console', json.switch['console']);
+		setBoolValue('#switch_console_escape', json.switch['console.escape']);
+		setBoolValue('#switch_console_input', json.switch['console.input']);
+		setBoolValue('#switch_console_debug_string', json.switch['console.debug_string']);
+		setBoolValue('#switch_console_debug_string_time', json.switch['console.debug_string.time']);
+		setBoolValue('#switch_lua', json.switch['lua']);
+		setBoolValue('#switch_lua_env', json.switch['lua.env']);
+		setBoolValue('#switch_lua_path', json.switch['lua.path']);
+		setBoolValue('#switch_lua_getvalue', json.switch['lua.getvalue']);
+		setBoolValue('#switch_lua_rand', json.switch['lua.rand']);
+		setBoolValue('#switch_lua_randex', json.switch['lua.randex']);
+		setBoolValue('#switch_fast', json.switch['fast']);
+		setBoolValue('#switch_fast_exeditwindow', json.switch['fast.exeditwindow']);
+		setBoolValue('#switch_fast_settingdialog', json.switch['fast.settingdialog']);
+		setBoolValue('#switch_fast_cl', json.switch['fast.cl']);
+		setBoolValue('#switch_fast_radiationalblur', json.switch['fast.radiationalblur']);
+		setBoolValue('#switch_fast_polortransform', json.switch['fast.polortransform']);
+		setBoolValue('#switch_fast_flash', json.switch['fast.flash']);
 	}
 }
 
@@ -296,39 +304,45 @@ function saveFile()
 				]
 			}
 		},
+		"redo" : {
+			"shift" : getBoolValue('#redo_shift')
+		},
+		"fast_exeditwindow" : {
+			"step" : getIntValue('#fast_exeditwindow_step')
+		},
 		"switch" : {
-			"access_key" : getBoolValue('#json #switch #switch_access_key'),
-			"exo_aviutl_filter" : getBoolValue('#json #switch #switch_exo_aviutl_filter'),
-			"exo_track_minusval" : getBoolValue('#json #switch #switch_exo_track_minusval'),
-			"exo_sceneidx" : getBoolValue('#json #switch #switch_exo_sceneidx'),
-			"exo_trackparam" : getBoolValue('#json #switch #switch_exo_trackparam'),
-			"exo_specialcolorconv" : getBoolValue('#json #switch #switch_exo_specialcolorconv'),
-			"text_op_size" : getBoolValue('#json #switch #switch_text_op_size'),
-			"ignore_media_param_reset" : getBoolValue('#json #switch #switch_ignore_media_param_reset'),
-			"theme_cc" : getBoolValue('#json #switch #switch_theme_cc'),
-			"exeditwindow_sizing" : getBoolValue('#json #switch #switch_exeditwindow_sizing'),
-			"settingdialog_move" : getBoolValue('#json #switch #switch_settingdialog_move'),
-			"undo": getBoolValue('#json #switch #switch_undo'),
-			"undo.redo": getBoolValue('#json #switch #switch_undo_redo'),
-			"undo.redo.shift": getBoolValue('#json #switch #switch_undo_redo_shift'),
-			"console" : getBoolValue('#json #switch #switch_console'),
-			"console.escape" : getBoolValue('#json #switch #switch_console_escape'),
-			"console.input" : getBoolValue('#json #switch #switch_console_input'),
-			"console.debug_string" : getBoolValue('#json #switch #switch_console_debug_string'),
-			"console.debug_string.time": getBoolValue('#json #switch #switch_console_debug_string_time'),
-			"lua" : getBoolValue('#json #switch #switch_lua'),
-			"lua.env" : getBoolValue('#json #switch #switch_lua_env'),
-			"lua.rand" : getBoolValue('#json #switch #switch_lua_rand'),
-			"lua.randex" : getBoolValue('#json #switch #switch_lua_randex'),
-			"lua.getvalue": getBoolValue('#json #switch #switch_lua_getvalue'),
-			"lua.path" : getBoolValue('#json #switch #switch_lua_path'),
-			"fast" : getBoolValue('#json #switch #switch_fast'),
-			"fast.cl" : getBoolValue('#json #switch #switch_fast_cl'),
-			"fast.exeditwindow" : getBoolValue('#json #switch #switch_fast_exeditwindow'),
-			"fast.exeditwindow.step" : getIntValue('#json #switch #switch_fast_exeditwindow_step'),
-			"fast.settingdialog" : getBoolValue('#json #switch #switch_fast_settingdialog'),
-			"fast.radiationalblur" : getBoolValue('#json #switch #switch_fast_radiationalblur'),
-			"fast.polortransform" : getBoolValue('#json #switch #switch_fast_polortransform')
+			"access_key" : getBoolValue('#switch_access_key'),
+			"exo_aviutl_filter" : getBoolValue('#switch_exo_aviutl_filter'),
+			"exo_sceneidx" : getBoolValue('#switch_exo_sceneidx'),
+			"exo_trackparam" : getBoolValue('#switch_exo_trackparam'),
+			"exo_track_minusval" : getBoolValue('#switch_exo_track_minusval'),
+			"exo_specialcolorconv" : getBoolValue('#switch_exo_specialcolorconv'),
+			"tra_aviutlfilter" : getBoolValue('#switch_tra_aviutlfilter'),
+			"text_op_size" : getBoolValue('#switch_text_op_size'),
+			"ignore_media_param_reset" : getBoolValue('#switch_ignore_media_param_reset'),
+			"theme_cc" : getBoolValue('#switch_theme_cc'),
+			"exeditwindow_sizing" : getBoolValue('#switch_exeditwindow_sizing'),
+			"settingdialog_move" : getBoolValue('#switch_settingdialog_move'),
+			"undo": getBoolValue('#switch_undo'),
+			"undo.redo": getBoolValue('#switch_undo_redo'),
+			"console" : getBoolValue('#switch_console'),
+			"console.escape" : getBoolValue('#switch_console_escape'),
+			"console.input" : getBoolValue('#switch_console_input'),
+			"console.debug_string" : getBoolValue('#switch_console_debug_string'),
+			"console.debug_string.time": getBoolValue('#switch_console_debug_string_time'),
+			"lua" : getBoolValue('#switch_lua'),
+			"lua.env" : getBoolValue('#switch_lua_env'),
+			"lua.path" : getBoolValue('#switch_lua_path'),
+			"lua.getvalue": getBoolValue('#switch_lua_getvalue'),
+			"lua.rand" : getBoolValue('#switch_lua_rand'),
+			"lua.randex" : getBoolValue('#switch_lua_randex'),
+			"fast" : getBoolValue('#switch_fast'),
+			"fast.exeditwindow" : getBoolValue('#switch_fast_exeditwindow'),
+			"fast.settingdialog" : getBoolValue('#switch_fast_settingdialog'),
+			"fast.cl" : getBoolValue('#switch_fast_cl'),
+			"fast.radiationalblur" : getBoolValue('#switch_fast_radiationalblur'),
+			"fast.polortransform" : getBoolValue('#switch_fast_polortransform'),
+			"fast.flash" : getBoolValue('#switch_fast_flash')
 		}
 	};
 
@@ -359,29 +373,32 @@ function refreshPreview()
 
 	// タイムラインの高さを設定する。
 	var height = Math.round(getIntValue('#json #theme_cc #layer #height_medium'));
-	$('.preview div').css('margin-top', '4px');
-	$('.preview div').css('font-size', height + 'px');
-	$('.preview div').css('line-height', '100%');
+
+	$('.preview > div > div').css('font-size', height - 4 + 'px');
+
+	$('.preview > div > div > span').css('margin-top', '4px');
+	$('.preview > div > div > span').css('font-size', height - 4 + 'px');
+//	$('.preview > div > div > span').css('line-height', '100%');
 
 	// オブジェクトの文字色を設定する。
-	$('.preview th').css('color', '#000');
-	$('.preview td').css('color', getPureColorValue('#json #theme_cc #object #name_col_0'));
-	$('.preview .inactive-layer th').css('color', getPureColorValue('#json #theme_cc #object #name_col_1'));
-	$('.preview .inactive-layer td').css('color', getPureColorValue('#json #theme_cc #object #name_col_1'));
+	$('.preview .active-layer').css('color', getPureColorValue('#json #theme_cc #object #name_col_0'));
+	$('.preview .active-layer .layer-title').css('color', '#000');
+	$('.preview .inactive-layer').css('color', getPureColorValue('#json #theme_cc #object #name_col_1'));
+	$('.preview .inactive-layer').css('color', getPureColorValue('#json #theme_cc #object #name_col_1'));
 
 	// オブジェクトの背景色を設定する。
-	$('.preview .media-object div').css('background', getGradient('#json #theme_cc #object #media_col'));
-	$('.preview .audio-object div').css('background', getGradient('#json #theme_cc #object #audio_col'));
-	$('.preview .control-object div').css('background', getGradient('#json #theme_cc #object #control_col'));
-	$('.preview .selected-media-object div').css('background-color', getPureColorValue('#json #theme_cc #object #media_col_2'));
-	$('.preview .selected-audio-object div').css('background-color', getPureColorValue('#json #theme_cc #object #audio_col_2'));
-	$('.preview .selected-control-object div').css('background-color', getPureColorValue('#json #theme_cc #object #control_col_2'));
-	$('.preview .mfilter-object div').css('background', getGradient('#json #theme_cc #object #mfilter_col'));
-	$('.preview .afilter-object div').css('background', getGradient('#json #theme_cc #object #afilter_col'));
-	$('.preview .inactive-object div').css('background', getGradient('#json #theme_cc #object #inactive_col'));
-	$('.preview .selected-mfilter-object div').css('background-color', getPureColorValue('#json #theme_cc #object #mfilter_col_2'));
-	$('.preview .selected-afilter-object div').css('background-color', getPureColorValue('#json #theme_cc #object #afilter_col_2'));
-	$('.preview .selected-inactive-object div').css('background-color', getPureColorValue('#json #theme_cc #object #inactive_col_2'));
+	$('.preview .media-object span').css('background', getGradient('#json #theme_cc #object #media_col'));
+	$('.preview .audio-object span').css('background', getGradient('#json #theme_cc #object #audio_col'));
+	$('.preview .control-object span').css('background', getGradient('#json #theme_cc #object #control_col'));
+	$('.preview .selected-media-object span').css('background-color', getPureColorValue('#json #theme_cc #object #media_col_2'));
+	$('.preview .selected-audio-object span').css('background-color', getPureColorValue('#json #theme_cc #object #audio_col_2'));
+	$('.preview .selected-control-object span').css('background-color', getPureColorValue('#json #theme_cc #object #control_col_2'));
+	$('.preview .mfilter-object span').css('background', getGradient('#json #theme_cc #object #mfilter_col'));
+	$('.preview .afilter-object span').css('background', getGradient('#json #theme_cc #object #afilter_col'));
+	$('.preview .inactive-object span').css('background', getGradient('#json #theme_cc #object #inactive_col'));
+	$('.preview .selected-mfilter-object span').css('background-color', getPureColorValue('#json #theme_cc #object #mfilter_col_2'));
+	$('.preview .selected-afilter-object span').css('background-color', getPureColorValue('#json #theme_cc #object #afilter_col_2'));
+	$('.preview .selected-inactive-object span').css('background-color', getPureColorValue('#json #theme_cc #object #inactive_col_2'));
 
 	// タイムラインの背景色を設定する。
 	var hide_alpha = getFloatValue('#json #theme_cc #layer #hide_alpha');
@@ -393,8 +410,8 @@ function refreshPreview()
 		"b":base.b * hide_alpha
 	};
 	var inactiveString = rgbToHex(inactive);
-	$('.preview th, .preview td').css('background-color', baseString);
-	$('.preview .inactive-layer th, .preview .inactive-layer td').css('background-color', inactiveString);
+	$('.preview .active-layer').css('background-color', baseString);
+	$('.preview .inactive-layer').css('background-color', inactiveString);
 
 	// 透明度を設定する。
 //	$('.preview .inactive-layer').css('opacity', getFloatValue('#json #theme_cc #layer #hide_alpha'));
@@ -428,7 +445,7 @@ $(document).ready(function()
 
 	// プレビューを更新する。
 	refreshPreview();
-
+/*
 	// ウィンドウサイズを調整する。
 	var contents = document.getElementById('contents');
 	var w = contents.scrollWidth;
@@ -436,6 +453,7 @@ $(document).ready(function()
 	var aw = window.outerWidth - window.innerWidth;
 	var ah = window.outerHeight - window.innerHeight;
 	window.resizeTo(w + aw, h + ah);
+*/
 });
 
 $('#load').click(function()

@@ -29,13 +29,20 @@
 			"bpm_grid_col" : [ "646464", "a0a0a0" ]
 		}
 	},
+	"redo" : {
+		"shift" : true
+	},
+	"fast_exeditwindow" : {
+		"step" : 0
+	},
 	"switch" : {
 		"access_key" : false,
-		"exo_aviutl_filter" : true,
-		"exo_track_minusval" : true,
+		"exo_aviutlfilter" : true,
 		"exo_sceneidx" : true,
 		"exo_trackparam" : true,
+		"exo_track_minusval" : true,
 		"exo_specialcolorconv" : true,
+		"tra_aviutlfilter" : true,
 		"text_op_size" : true,
 		"ignore_media_param_reset" : false,
 		"theme_cc" : true,
@@ -43,7 +50,6 @@
 		"settingdialog_move" : true,
 		"undo" : true,
 		"undo.redo" : true,
-		"undo.redo.shift" : true,
 		"console" : true,
 		"console.escape" : true,
 		"console.input" : false,
@@ -51,16 +57,16 @@
 		"console.debug_string.time" : true,
 		"lua" : true,
 		"lua.env" : false,
+		"lua.path" : false,
+		"lua.getvalue" : true,
 		"lua.rand" : true,
 		"lua.randex" : true,
-		"lua.getvalue" : true,
-		"lua.path" : false,
 		"fast" : true,
-		"fast.cl" : true,
 		"fast.exeditwindow" : true,
-		"fast.exeditwindow.step" : 0,
-		"fast.settingdialog" : true,
+		"fast_settingdialog" : true,
+		"fast.cl" : true,
 		"fast.radiationalblur" : true,
-		"fast.polortransform" : true
+		"fast.polortransform" : true,
+		"fast.flash" : true
 	}
 }
