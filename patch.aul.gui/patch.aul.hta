@@ -21,7 +21,7 @@
 <div id="json">
 	<form id="form">
 		<h1>
-			patch.aul.json の編集 r25
+			patch.aul.json の編集 r30
 			<span class="tooltip">
 				<input class="button" type="button" id="load" value="Load">
 				<div class="tooltip-text">
@@ -278,6 +278,17 @@
 				<span class="_label">step</span>
 				<input class="int-value" type="text" id="fast_exeditwindow_step" value="0">
 				<span class="desc">グラデーション描画の方法 (負数でパッチ無効,0でグラデーションのパッチ,正数でその分割数の単色矩形 既定値: 0)</span>
+			</div>
+		</div>
+		<h2>
+			fast_text
+			<span class="desc">テキストの軽量化について</span>
+		</h2>
+		<div class="node" id="fast_text">
+			<div class="element">
+				<span class="_label">release_time</span>
+				<input class="int-value" type="text" id="fast_text_release_time" value="120">
+				<span class="desc">120 ; キャッシュデータの寿命[秒]</span>
 			</div>
 		</div>
 		<h2>

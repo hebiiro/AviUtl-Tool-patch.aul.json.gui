@@ -1,5 +1,6 @@
 # AviUtl ツール - patch.aul.json 編集
 
+* 30.0.0 - 2022/06/05 r30 に対応
 * 25.0.0 - 2022/05/24 r25 に対応
 * 17.0.0 - 2022/04/09 r17 に対応
 * 16.0.0 - 2022/04/03 r16 に対応
@@ -33,9 +34,9 @@ patch.aul.gui フォルダを AviUtl フォルダに入れてください。
 
 ## 動作確認
 
-* patch.aul r25 https://scrapbox.io/ePi5131/patch.aul
+* patch.aul r30 https://scrapbox.io/ePi5131/patch.aul
 
-## 使用ライブラリ
+## クレジット
 
 ### jQuery v3.6.0
 * https://jquery.com/
@@ -46,3 +47,9 @@ patch.aul.gui フォルダを AviUtl フォルダに入れてください。
 * https://github.com/bgrins/spectrum
 * Author: Brian Grinstead
 * License: MIT
+
+# 作成者情報
+ 
+* 作成者 - 蛇色 (へびいろ)
+* GitHub - https://github.com/hebiiro
+* Twitter - https://twitter.com/io_hebiiro

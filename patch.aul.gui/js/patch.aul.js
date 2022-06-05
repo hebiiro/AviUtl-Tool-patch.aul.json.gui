@@ -168,6 +168,10 @@ function loadFile(showDialog)
 		setIntValue('#fast_exeditwindow_step', json.fast_exeditwindow['step']);
 	}
 
+	if (json.fast_text) {
+		setIntValue('#fast_text_release_time', json.fast_text['release_time']);
+	}
+
 	if (json.switch) {
 		setBoolValue('#switch_access_key', json.switch['access_key']);
 		setBoolValue('#switch_exo_aviutl_filter', json.switch['exo_aviutl_filter']);
@@ -309,6 +313,9 @@ function saveFile()
 		},
 		"fast_exeditwindow" : {
 			"step" : getIntValue('#fast_exeditwindow_step')
+		},
+		"fast_text" : {
+			"release_time" : getIntValue('#fast_text_release_time')
 		},
 		"switch" : {
 			"access_key" : getBoolValue('#switch_access_key'),
