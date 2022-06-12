@@ -201,6 +201,8 @@ function loadFile(showDialog)
 		setBoolValue('#switch_fast', json.switch['fast']);
 		setBoolValue('#switch_fast_exeditwindow', json.switch['fast.exeditwindow']);
 		setBoolValue('#switch_fast_settingdialog', json.switch['fast.settingdialog']);
+		setBoolValue('#switch_fast_text', json.switch['fast.text']);
+		setBoolValue('#switch_fast_border', json.switch['fast.border']);
 		setBoolValue('#switch_fast_cl', json.switch['fast.cl']);
 		setBoolValue('#switch_fast_radiationalblur', json.switch['fast.radiationalblur']);
 		setBoolValue('#switch_fast_polortransform', json.switch['fast.polortransform']);
@@ -346,6 +348,8 @@ function saveFile()
 			"fast" : getBoolValue('#switch_fast'),
 			"fast.exeditwindow" : getBoolValue('#switch_fast_exeditwindow'),
 			"fast.settingdialog" : getBoolValue('#switch_fast_settingdialog'),
+			"fast.text" : getBoolValue('#switch_fast_text'),
+			"fast.border" : getBoolValue('#switch_fast_border'),
 			"fast.cl" : getBoolValue('#switch_fast_cl'),
 			"fast.radiationalblur" : getBoolValue('#switch_fast_radiationalblur'),
 			"fast.polortransform" : getBoolValue('#switch_fast_polortransform'),
