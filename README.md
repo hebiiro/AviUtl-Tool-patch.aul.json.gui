@@ -17,6 +17,7 @@ patch.aul.gui フォルダを AviUtl フォルダに入れてください。
 
 ## 更新履歴
 
+* 39.0.0 - 2022/06/16 r39 に対応
 * 34.0.0 - 2022/06/12 r34 に対応
 * 30.0.0 - 2022/06/05 r30 に対応
 * 25.0.0 - 2022/05/24 r25 に対応
@@ -28,7 +29,7 @@ patch.aul.gui フォルダを AviUtl フォルダに入れてください。
 
 ## 動作確認
 
-* patch.aul r34 https://scrapbox.io/ePi5131/patch.aul
+* patch.aul r39 https://scrapbox.io/ePi5131/patch.aul
 
 ## クレジット
 

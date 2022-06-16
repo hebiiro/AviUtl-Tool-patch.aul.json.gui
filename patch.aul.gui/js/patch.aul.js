@@ -185,6 +185,8 @@ function loadFile(showDialog)
 		setBoolValue('#switch_theme_cc', json.switch['theme_cc']);
 		setBoolValue('#switch_exeditwindow_sizing', json.switch['exeditwindow_sizing']);
 		setBoolValue('#switch_settingdialog_move', json.switch['settingdialog_move']);
+		setBoolValue('#switch_obj_lensblur', json.switch['obj_lensblur']);
+		setBoolValue('#switch_settingdialog_excolorconfig', json.switch['settingdialog_excolorconfig']);
 		setBoolValue('#switch_undo', json.switch['undo']);
 		setBoolValue('#switch_undo_redo', json.switch['undo.redo']);
 		setBoolValue('#switch_console', json.switch['console']);
@@ -207,6 +209,8 @@ function loadFile(showDialog)
 		setBoolValue('#switch_fast_radiationalblur', json.switch['fast.radiationalblur']);
 		setBoolValue('#switch_fast_polortransform', json.switch['fast.polortransform']);
 		setBoolValue('#switch_fast_flash', json.switch['fast.flash']);
+		setBoolValue('#switch_fast_directionalblur', json.switch['fast.directionalblur']);
+		setBoolValue('#switch_fast_lensblur', json.switch['fast.lensblur']);
 	}
 }
 
@@ -332,6 +336,8 @@ function saveFile()
 			"theme_cc" : getBoolValue('#switch_theme_cc'),
 			"exeditwindow_sizing" : getBoolValue('#switch_exeditwindow_sizing'),
 			"settingdialog_move" : getBoolValue('#switch_settingdialog_move'),
+			"obj_lensblur": getBoolValue('#switch_obj_lensblur'),
+			"settingdialog_excolorconfig": getBoolValue('#switch_settingdialog_excolorconfig'),
 			"undo": getBoolValue('#switch_undo'),
 			"undo.redo": getBoolValue('#switch_undo_redo'),
 			"console" : getBoolValue('#switch_console'),
@@ -353,7 +359,9 @@ function saveFile()
 			"fast.cl" : getBoolValue('#switch_fast_cl'),
 			"fast.radiationalblur" : getBoolValue('#switch_fast_radiationalblur'),
 			"fast.polortransform" : getBoolValue('#switch_fast_polortransform'),
-			"fast.flash" : getBoolValue('#switch_fast_flash')
+			"fast.flash" : getBoolValue('#switch_fast_flash'),
+			"fast.directionalblur" : getBoolValue('#switch_fast_directionalblur'),
+			"fast.lensblur" : getBoolValue('#switch_fast_lensblur')
 		}
 	};
 

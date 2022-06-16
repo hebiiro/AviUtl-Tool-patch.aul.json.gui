@@ -21,7 +21,7 @@
 <div id="json">
 	<form id="form">
 		<h1>
-			patch.aul.json の編集 r34
+			patch.aul.json の編集 r39
 			<span class="tooltip">
 				<input class="button" type="button" id="load" value="Load">
 				<div class="tooltip-text">
@@ -329,7 +329,7 @@
 			<div class="element">
 				<input class="checkbox" type="checkbox" id="switch_tra_aviutlfilter" checked>
 				<span class="_label">tra_aviutlfilter</span>
-				<span class="desc"></span>
+				<span class="desc">拡張色変換のウィンドウが下のフィルタに被るのを修正 (既定値: true)</span>
 			</div>
 			<div class="element">
 				<input class="checkbox" type="checkbox" id="switch_text_op_size" checked>
@@ -355,6 +355,16 @@
 				<input class="checkbox" type="checkbox" id="switch_settingdialog_move" checked>
 				<span class="_label">settingdialog_move</span>
 				<span class="desc">設定ダイアログを高ポーリングレートマウス環境で移動すると重たい の解消 (既定値: true)</span>
+			</div>
+			<div class="element">
+				<input class="checkbox" type="checkbox" id="switch_obj_lensblur" checked>
+				<span class="_label">obj_lensblur</span>
+				<span class="desc">小さい画像に対してサイズ固定で範囲の大きいレンズブラーを掛けると例外になるのを修正 (既定値: true)</span>
+			</div>
+			<div class="element">
+				<input class="checkbox" type="checkbox" id="switch_settingdialog_excolorconfig" checked>
+				<span class="_label">settingdialog_excolorconfig</span>
+				<span class="desc"></span>
 			</div>
 			<hr />
 			<div class="element">
@@ -469,6 +479,16 @@
 				<input class="checkbox" type="checkbox" id="switch_fast_flash" checked>
 				<span class="_label">fast.flash</span>
 				<span class="desc">fast.clが前提 閃光の高速化 (既定値: true)</span>
+			</div>
+			<div class="element">
+				<input class="checkbox" type="checkbox" id="switch_fast_directionalblur" checked>
+				<span class="_label">fast.directionalblur</span>
+				<span class="desc">fast.clが前提 方向ブラーの高速化 (既定値: true)</span>
+			</div>
+			<div class="element">
+				<input class="checkbox" type="checkbox" id="switch_fast_lensblur" checked>
+				<span class="_label">fast.lensblur</span>
+				<span class="desc">fast.clが前提 レンズブラーの高速化 (既定値: true)</span>
 			</div>
 		</div>
 	</form>
