@@ -180,13 +180,21 @@ function loadFile(showDialog)
 		setBoolValue('#switch_exo_track_minusval', json.switch['exo_track_minusval']);
 		setBoolValue('#switch_exo_specialcolorconv', json.switch['exo_specialcolorconv']);
 		setBoolValue('#switch_tra_aviutlfilter', json.switch['tra_aviutlfilter']);
+		setBoolValue('#switch_tra_change_drawfilter', json.switch['tra_change_drawfilter']);
+		setBoolValue('#switch_tra_specified_speed', json.switch['tra_specified_speed']);
 		setBoolValue('#switch_text_op_size', json.switch['text_op_size']);
 		setBoolValue('#switch_ignore_media_param_reset', json.switch['ignore_media_param_reset']);
+		setBoolValue('#switch_failed_sjis_msgbox', json.switch['failed_sjis_msgbox']);
 		setBoolValue('#switch_theme_cc', json.switch['theme_cc']);
 		setBoolValue('#switch_exeditwindow_sizing', json.switch['exeditwindow_sizing']);
 		setBoolValue('#switch_settingdialog_move', json.switch['settingdialog_move']);
+		setBoolValue('#switch_obj_colorcorrection', json.switch['obj_colorcorrection']);
 		setBoolValue('#switch_obj_lensblur', json.switch['obj_lensblur']);
+		setBoolValue('#switch_obj_noise', json.switch['obj_noise']);
 		setBoolValue('#switch_settingdialog_excolorconfig', json.switch['settingdialog_excolorconfig']);
+		setBoolValue('#switch_r_click_menu_split', json.switch['r_click_menu_split']);
+		setBoolValue('#switch_r_click_menu_delete', json.switch['r_click_menu_delete']);
+		setBoolValue('#switch_blend', json.switch['blend']);
 		setBoolValue('#switch_undo', json.switch['undo']);
 		setBoolValue('#switch_undo_redo', json.switch['undo.redo']);
 		setBoolValue('#switch_console', json.switch['console']);
@@ -204,10 +212,12 @@ function loadFile(showDialog)
 		setBoolValue('#switch_fast_exeditwindow', json.switch['fast.exeditwindow']);
 		setBoolValue('#switch_fast_settingdialog', json.switch['fast.settingdialog']);
 		setBoolValue('#switch_fast_text', json.switch['fast.text']);
+		setBoolValue('#switch_fast_create_figure', json.switch['fast.create_figure']);
 		setBoolValue('#switch_fast_border', json.switch['fast.border']);
 		setBoolValue('#switch_fast_cl', json.switch['fast.cl']);
 		setBoolValue('#switch_fast_radiationalblur', json.switch['fast.radiationalblur']);
 		setBoolValue('#switch_fast_polortransform', json.switch['fast.polortransform']);
+		setBoolValue('#switch_fast_displacementmap', json.switch['fast.displacementmap']);
 		setBoolValue('#switch_fast_flash', json.switch['fast.flash']);
 		setBoolValue('#switch_fast_directionalblur', json.switch['fast.directionalblur']);
 		setBoolValue('#switch_fast_lensblur', json.switch['fast.lensblur']);
@@ -331,13 +341,21 @@ function saveFile()
 			"exo_track_minusval" : getBoolValue('#switch_exo_track_minusval'),
 			"exo_specialcolorconv" : getBoolValue('#switch_exo_specialcolorconv'),
 			"tra_aviutlfilter" : getBoolValue('#switch_tra_aviutlfilter'),
+			"tra_change_drawfilter": getBoolValue('#switch_tra_change_drawfilter'),
+			"tra_specified_speed": getBoolValue('#switch_tra_specified_speed'),
 			"text_op_size" : getBoolValue('#switch_text_op_size'),
 			"ignore_media_param_reset" : getBoolValue('#switch_ignore_media_param_reset'),
+			"failed_sjis_msgbox": getBoolValue('#switch_failed_sjis_msgbox'),
 			"theme_cc" : getBoolValue('#switch_theme_cc'),
 			"exeditwindow_sizing" : getBoolValue('#switch_exeditwindow_sizing'),
 			"settingdialog_move" : getBoolValue('#switch_settingdialog_move'),
+			"obj_colorcorrection": getBoolValue('#switch_obj_colorcorrection'),
 			"obj_lensblur": getBoolValue('#switch_obj_lensblur'),
+			"obj_noise": getBoolValue('#switch_obj_noise'),
 			"settingdialog_excolorconfig": getBoolValue('#switch_settingdialog_excolorconfig'),
+			"r_click_menu_split": getBoolValue('#switch_r_click_menu_split'),
+			"r_click_menu_delete": getBoolValue('#switch_r_click_menu_delete'),
+			"blend": getBoolValue('#switch_blend'),
 			"undo": getBoolValue('#switch_undo'),
 			"undo.redo": getBoolValue('#switch_undo_redo'),
 			"console" : getBoolValue('#switch_console'),
@@ -355,10 +373,12 @@ function saveFile()
 			"fast.exeditwindow" : getBoolValue('#switch_fast_exeditwindow'),
 			"fast.settingdialog" : getBoolValue('#switch_fast_settingdialog'),
 			"fast.text" : getBoolValue('#switch_fast_text'),
+			"fast.create_figure": getBoolValue('#switch_fast_create_figure'),
 			"fast.border" : getBoolValue('#switch_fast_border'),
 			"fast.cl" : getBoolValue('#switch_fast_cl'),
 			"fast.radiationalblur" : getBoolValue('#switch_fast_radiationalblur'),
 			"fast.polortransform" : getBoolValue('#switch_fast_polortransform'),
+			"fast.displacementmap": getBoolValue('#switch_fast_displacementmap'),
 			"fast.flash" : getBoolValue('#switch_fast_flash'),
 			"fast.directionalblur" : getBoolValue('#switch_fast_directionalblur'),
 			"fast.lensblur" : getBoolValue('#switch_fast_lensblur')
