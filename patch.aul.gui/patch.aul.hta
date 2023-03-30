@@ -21,7 +21,7 @@
 <div id="json">
 	<form id="form">
 		<h1>
-			patch.aul.json の編集 r42
+			patch.aul.json の編集 r43_ss_14
 			<span class="tooltip">
 				<input class="button" type="button" id="load" value="Load">
 				<div class="tooltip-text">
@@ -159,6 +159,11 @@
 					<span class="desc">上のオブジェクトでクリッピング(オブジェクト)の印の高さ (既定値: -3)</span>
 				</div>
 				<div class="element">
+					<span class="label">disp_dialog_col</span>
+					<input class="color" type="color" id="disp_dialog_col" value="#ffffff">
+					<span class="desc">(既定値: "ffffff")</span>
+				</div>
+				<div class="element">
 					<span class="label">midpt_size</span>
 					<input class="int-value" type="text" id="midpt_size_0" value="4">
 					<input class="int-value" type="text" id="midpt_size_1" value="3">
@@ -185,6 +190,19 @@
 					<input class="color" type="color" id="bpm_grid_col_0" value="#646464">
 					<input class="color" type="color" id="bpm_grid_col_1" value="#a0a0a0">
 					<span class="desc">[measure, beat] ; BPMグリッドの色 (既定値: [ "646464", "a0a0a0" ])</span>
+				</div>
+			</div>
+			<h2>scrollbar</h2>
+			<div class="node" id="scrollbar">
+				<div class="element">
+					<span class="label">vertical_thumb_min</span>
+					<input class="int-value" type="text" id="vertical_thumb_min" value="10">
+					<span class="desc">(既定値: 10)</span>
+				</div>
+				<div class="element">
+					<span class="label">horizontal_thumb_min</span>
+					<input class="int-value" type="text" id="horizontal_thumb_min" value="1024">
+					<span class="desc">(既定値: 1024)</span>
 				</div>
 			</div>
 		</div>
@@ -297,9 +315,34 @@
 		</h2>
 		<div class="node" id="switch">
 			<div class="element">
+				<input class="checkbox" type="checkbox" id="switch_keyconfig" checked>
+				<label class="_label" for="switch_keyconfig">keyconfig</label>
+				<span class="desc">(既定値: true)</span>
+			</div>
+			<div class="element">
 				<input class="checkbox" type="checkbox" id="switch_access_key">
 				<label class="_label" for="switch_access_key">access_key</label>
 				<span class="desc">アクセスキーを付加するか (既定値: false)</span>
+			</div>
+			<div class="element">
+				<input class="checkbox" type="checkbox" id="switch_colorpalette_cache" checked>
+				<label class="_label" for="switch_colorpalette_cache">colorpalette_cache</label>
+				<span class="desc">(既定値: true)</span>
+			</div>
+			<div class="element">
+				<input class="checkbox" type="checkbox" id="switch_fileinfo" checked>
+				<label class="_label" for="switch_fileinfo">fileinfo</label>
+				<span class="desc">(既定値: true)</span>
+			</div>
+			<div class="element">
+				<input class="checkbox" type="checkbox" id="switch_aup_layer_setting" checked>
+				<label class="_label" for="switch_aup_layer_setting">aup_kayer_setting</label>
+				<span class="desc">(既定値: true)</span>
+			</div>
+			<div class="element">
+				<input class="checkbox" type="checkbox" id="switch_aup_scene_setting" checked>
+				<label class="_label" for="switch_aup_scene_setting">aup_scene_setting</label>
+				<span class="desc">(既定値: true)</span>
 			</div>
 			<div class="element">
 				<input class="checkbox" type="checkbox" id="switch_exo_aviutl_filter" checked>
@@ -316,15 +359,32 @@
 				<label class="_label" for="switch_exo_trackparam">exo_trackparam</label>
 				<span class="desc">オブジェクトファイルの入力で、トラックバー変化方法スクリプトの名前に	ASCII以外の文字が含まれているとパラメータを読み込めない (既定値: true)</span>
 			</div>
+<!--
 			<div class="element">
 				<input class="checkbox" type="checkbox" id="switch_exo_track_minusval" checked>
 				<label class="_label" for="switch_exo_track_minusval">exo_track_minusval</label>
 				<span class="desc">オブジェクトファイルの入力で、トラックバーの -1 超 0 未満の値が正になってしまう (既定値: true)</span>
 			</div>
+-->
+			<div class="element">
+				<input class="checkbox" type="checkbox" id="switch_exo_midpt_and_tra" checked>
+				<label class="_label" for="switch_exo_midpt_and_tra">exo_midpt_and_tra</label>
+				<span class="desc">(既定値: true)</span>
+			</div>
 			<div class="element">
 				<input class="checkbox" type="checkbox" id="switch_exo_specialcolorconv" checked>
 				<label class="_label" for="switch_exo_specialcolorconv">exo_specialcolorconv</label>
 				<span class="desc">オブジェクトファイルの入出力で、特定色域変換のstatusが2つあって正しく入出力できない (既定値: true)</span>
+			</div>
+			<div class="element">
+				<input class="checkbox" type="checkbox" id="switch_exa_fold_gui" checked>
+				<label class="_label" for="switch_exa_fold_gui">exa_fold_gui</label>
+				<span class="desc">(既定値: true)</span>
+			</div>
+			<div class="element">
+				<input class="checkbox" type="checkbox" id="switch_str_minusval" checked>
+				<label class="_label" for="switch_str_minusval">str_minuval</label>
+				<span class="desc">(既定値: true)</span>
 			</div>
 			<div class="element">
 				<input class="checkbox" type="checkbox" id="switch_tra_aviutlfilter" checked>
@@ -357,6 +417,16 @@
 				<span class="desc">ファイルパスが原因の「対応していないフォーマット～」エラーのメッセージを変更する (既定値: true)</span>
 			</div>
 			<div class="element">
+				<input class="checkbox" type="checkbox" id="switch_failed_longer_path" checked>
+				<label class="_label" for="switch_failed_longer_path">failed_longer_path</label>
+				<span class="desc">(既定値: true)</span>
+			</div>
+			<div class="element">
+				<input class="checkbox" type="checkbox" id="switch_failed_file_drop" checked>
+				<label class="_label" for="switch_failed_file_drop">failed_file_drop</label>
+				<span class="desc">(既定値: true)</span>
+			</div>
+			<div class="element">
 				<input class="checkbox" type="checkbox" id="switch_theme_cc" checked>
 				<label class="_label" for="switch_theme_cc">theme_cc</label>
 				<span class="desc">テーマ機能 (既定値: true)</span>
@@ -372,9 +442,44 @@
 				<span class="desc">設定ダイアログを高ポーリングレートマウス環境で移動すると重たい の解消 (既定値: true)</span>
 			</div>
 			<div class="element">
+				<input class="checkbox" type="checkbox" id="switch_obj_text" checked>
+				<label class="_label" for="switch_obj_text">obj_text</label>
+				<span class="desc">(既定値: true)</span>
+			</div>
+			<div class="element">
+				<input class="checkbox" type="checkbox" id="switch_obj_audiofile" checked>
+				<label class="_label" for="switch_obj_audiofile">obj_audiofile</label>
+				<span class="desc">(既定値: true)</span>
+			</div>
+			<div class="element">
 				<input class="checkbox" type="checkbox" id="switch_obj_colorcorrection" checked>
 				<label class="_label" for="switch_obj_colorcorrection">obj_colorcorrection</label>
 				<span class="desc">色調補正の色相計算を修正 (既定値: true)</span>
+			</div>
+			<div class="element">
+				<input class="checkbox" type="checkbox" id="switch_obj_glow" checked>
+				<label class="_label" for="switch_obj_glow">obj_glow</label>
+				<span class="desc">(既定値: true)</span>
+			</div>
+			<div class="element">
+				<input class="checkbox" type="checkbox" id="switch_obj_sharp" checked>
+				<label class="_label" for="switch_obj_sharp">obj_sharp</label>
+				<span class="desc">(既定値: true)</span>
+			</div>
+			<div class="element">
+				<input class="checkbox" type="checkbox" id="switch_obj_mask" checked>
+				<label class="_label" for="switch_obj_mask">obj_mask</label>
+				<span class="desc">(既定値: true)</span>
+			</div>
+			<div class="element">
+				<input class="checkbox" type="checkbox" id="switch_obj_rotation" checked>
+				<label class="_label" for="switch_obj_rotation">obj_rotation</label>
+				<span class="desc">(既定値: true)</span>
+			</div>
+			<div class="element">
+				<input class="checkbox" type="checkbox" id="switch_obj_resize" checked>
+				<label class="_label" for="switch_obj_resize">obj_resize</label>
+				<span class="desc">(既定値: true)</span>
 			</div>
 			<div class="element">
 				<input class="checkbox" type="checkbox" id="switch_obj_lensblur" checked>
@@ -382,14 +487,34 @@
 				<span class="desc">小さい画像に対してサイズ固定で範囲の大きいレンズブラーを掛けると例外になるのを修正 (既定値: true)</span>
 			</div>
 			<div class="element">
+				<input class="checkbox" type="checkbox" id="switch_obj_imageloop" checked>
+				<label class="_label" for="switch_obj_imageloop">obj_imageloop</label>
+				<span class="desc">(既定値: true)</span>
+			</div>
+			<div class="element">
 				<input class="checkbox" type="checkbox" id="switch_obj_noise" checked>
 				<label class="_label" for="switch_obj_noise">obj_noise</label>
 				<span class="desc">ノイズの速度X、変化速度のトラック変化方法が移動無し以外の時に速度Yの値をもとに計算が行われてしまうのを修正 (既定値: true)</span>
 			</div>
 			<div class="element">
+				<input class="checkbox" type="checkbox" id="switch_obj_specialcolorconv" checked>
+				<label class="_label" for="switch_obj_specialcolorconv">obj_specialcolorconv</label>
+				<span class="desc">(既定値: true)</span>
+			</div>
+			<div class="element">
+				<input class="checkbox" type="checkbox" id="switch_obj_portionfilter" checked>
+				<label class="_label" for="switch_obj_portionfilter">obj_portionfilter</label>
+				<span class="desc">(既定値: true)</span>
+			</div>
+			<div class="element">
 				<input class="checkbox" type="checkbox" id="switch_settingdialog_excolorconfig" checked>
 				<label class="_label" for="switch_settingdialog_excolorconfig">settingdialog_excolorconfig</label>
 				<span class="desc">拡張色変換のウィンドウが下のフィルタに被るのを修正 (既定値: true)</span>
+			</div>
+			<div class="element">
+				<input class="checkbox" type="checkbox" id="switch_settingdialog_chromakey" checked>
+				<label class="_label" for="switch_settingdialog_chromakey">settingdialog_chromakey</label>
+				<span class="desc">(既定値: true)</span>
 			</div>
 			<div class="element">
 				<input class="checkbox" type="checkbox" id="switch_r_click_menu_split" checked>
@@ -401,6 +526,87 @@
 				<label class="_label" for="switch_r_click_menu_delete">r_click_menu_delete</label>
 				<span class="desc">右クリック削除でテキストの字間行間が変わることがあるのを修正 (既定値: true)</span>
 			</div>
+			<div class="element">
+				<input class="checkbox" type="checkbox" id="switch_add_extension" checked>
+				<label class="_label" for="switch_add_extension">add_extension</label>
+				<span class="desc">(既定値: true)</span>
+			</div>
+			<div class="element">
+				<input class="checkbox" type="checkbox" id="switch_new_project_editbox" checked>
+				<label class="_label" for="switch_new_project_editbox">new_project_editbox</label>
+				<span class="desc">(既定値: true)</span>
+			</div>
+			<div class="element">
+				<input class="checkbox" type="checkbox" id="switch_scene_cache" checked>
+				<label class="_label" for="switch_scene_cache">scene_cache</label>
+				<span class="desc">(既定値: true)</span>
+			</div>
+			<div class="element">
+				<input class="checkbox" type="checkbox" id="switch_playback_speed" checked>
+				<label class="_label" for="switch_playback_speed">playback_speed</label>
+				<span class="desc">(既定値: true)</span>
+			</div>
+			<div class="element">
+				<input class="checkbox" type="checkbox" id="switch_setting_new_project" checked>
+				<label class="_label" for="switch_setting_new_project">setting_new_project</label>
+				<span class="desc">(既定値: true)</span>
+			</div>
+			<div class="element">
+				<input class="checkbox" type="checkbox" id="switch_shared_cache" checked>
+				<label class="_label" for="switch_shared_cache">shared_cache</label>
+				<span class="desc">(既定値: true)</span>
+			</div>
+			<div class="element">
+				<input class="checkbox" type="checkbox" id="switch_warning_duplicate" checked>
+				<label class="_label" for="switch_warning_duplicate">warning_duplicate</label>
+				<span class="desc">(既定値: true)</span>
+			</div>
+			<div class="element">
+				<input class="checkbox" type="checkbox" id="switch_rendering" checked>
+				<label class="_label" for="switch_rendering">rendering</label>
+				<span class="desc">(既定値: true)</span>
+			</div>
+			<div class="element">
+				<input class="checkbox" type="checkbox" id="switch_yc_rgb_conv" checked>
+				<label class="_label" for="switch_yc_rgb_conv">yc_rgb_conv</label>
+				<span class="desc">(既定値: true)</span>
+			</div>
+			<div class="element">
+				<input class="checkbox" type="checkbox" id="switch_camera_scene" checked>
+				<label class="_label" for="switch_camera_scene">camera_scene</label>
+				<span class="desc">(既定値: true)</span>
+			</div>
+			<div class="element">
+				<input class="checkbox" type="checkbox" id="switch_group_camera_scene" checked>
+				<label class="_label" for="switch_group_camera_scene">group_camera_scene</label>
+				<span class="desc">(既定値: true)</span>
+			</div>
+			<div class="element">
+				<input class="checkbox" type="checkbox" id="switch_change_disp_scene" checked>
+				<label class="_label" for="switch_change_disp_scene">change_disp_scene</label>
+				<span class="desc">(既定値: true)</span>
+			</div>
+			<div class="element">
+				<input class="checkbox" type="checkbox" id="switch_right_trackbar" checked>
+				<label class="_label" for="switch_right_trackbar">right_trackbar</label>
+				<span class="desc">(既定値: true)</span>
+			</div>
+			<div class="element">
+				<input class="checkbox" type="checkbox" id="switch_group_id" checked>
+				<label class="_label" for="switch_group_id">group_id</label>
+				<span class="desc">(既定値: true)</span>
+			</div>
+			<div class="element">
+				<input class="checkbox" type="checkbox" id="switch_borderonly_text" checked>
+				<label class="_label" for="switch_borderonly_text">borderonly_text</label>
+				<span class="desc">(既定値: true)</span>
+			</div>
+			<div class="element">
+				<input class="checkbox" type="checkbox" id="switch_patch_script_sort" checked>
+				<label class="_label" for="switch_patch_script_sort">patch_script_sort</label>
+				<span class="desc">(既定値: true)</span>
+			</div>
+
 			<div class="element">
 				<input class="checkbox" type="checkbox" id="switch_blend" checked>
 				<label class="_label" for="switch_blend">blend</label>
@@ -496,6 +702,11 @@
 				<span class="desc">テキストの軽量化 (既定値: true)</span>
 			</div>
 			<div class="element">
+				<input class="checkbox" type="checkbox" id="switch_fast_textborder" checked>
+				<label class="_label" for="switch_fast_textborder">fast.textborder</label>
+				<span class="desc">(既定値: true)</span>
+			</div>
+			<div class="element">
 				<input class="checkbox" type="checkbox" id="switch_fast_create_figure" checked>
 				<label class="_label" for="switch_fast_create_figure">fast.create_figure</label>
 				<span class="desc">図形の高速化 (既定値: true)</span>
@@ -504,6 +715,26 @@
 				<input class="checkbox" type="checkbox" id="switch_fast_border" checked>
 				<label class="_label" for="switch_fast_border">fast.border</label>
 				<span class="desc">縁取りの高速化/バグ修正 (既定値: true)</span>
+			</div>
+			<div class="element">
+				<input class="checkbox" type="checkbox" id="switch_fast_blur" checked>
+				<label class="_label" for="switch_fast_blur">fast.blur</label>
+				<span class="desc">(既定値: true)</span>
+			</div>
+			<div class="element">
+				<input class="checkbox" type="checkbox" id="switch_fast_glow" checked>
+				<label class="_label" for="switch_fast_glow">fast.glow</label>
+				<span class="desc">(既定値: true)</span>
+			</div>
+			<div class="element">
+				<input class="checkbox" type="checkbox" id="switch_fast_colorkey" checked>
+				<label class="_label" for="switch_fast_colorkey">fast.colorkey</label>
+				<span class="desc">(既定値: true)</span>
+			</div>
+			<div class="element">
+				<input class="checkbox" type="checkbox" id="switch_fast_chromakey" checked>
+				<label class="_label" for="switch_fast_chromakey">fast.chromakey</label>
+				<span class="desc">(既定値: true)</span>
 			</div>
 			<div class="element">
 				<input class="checkbox" type="checkbox" id="switch_fast_cl" checked>
@@ -516,8 +747,8 @@
 				<span class="desc">fast.clが前提 放射ブラーの高速化 (既定値: true)</span>
 			</div>
 			<div class="element">
-				<input class="checkbox" type="checkbox" id="switch_fast_polortransform" checked>
-				<label class="_label" for="switch_fast_polortransform">fast.polortransform</label>
+				<input class="checkbox" type="checkbox" id="switch_fast_polartransform" checked>
+				<label class="_label" for="switch_fast_polartransform">fast.polartransform</label>
 				<span class="desc">fast.clが前提 極座標変換の高速化 (既定値: true)</span>
 			</div>
 			<div class="element">
